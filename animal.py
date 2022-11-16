@@ -18,3 +18,7 @@ class Dog(Animal):
 
     def run(self) -> None:
         print("Woof Woof !")
+
+
+d = Dog("dingo", 4)
+d.run()
