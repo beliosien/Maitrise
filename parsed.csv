@@ -1,0 +1,3042 @@
+./dnspython.git/tests/test_transaction.py,"for key in self.rdatasets.keys():
+    if key[0] == name:
+        remove.append()","(57, 59)",1,F2L.2
+./dnspython.git/tests/test_dnssec.py,"for (name, key_rrset) in abs_keys.items():
+    keys[name] = dns.node.Node()
+    keys[name].rdatasets.append(key_rrset.to_rdataset())","(399, 401)",0,F2L.1
+./dnspython.git/tests/test_dnssec.py,"for rdata in [example_ds_sha1, example_ds_sha256, example_ds_sha384]:
+    (flags, digest) = rdata.to_text().rsplit(' ', 1)
+    dns.rdata.from_text(dns.rdataclass.IN, dns.rdatatype.DS, f'{flags} {digest}')
+    test_records.append(f'{flags} {digest[:len(digest) // 2]}')
+    test_records.append(f'{flags} {digest * 2}')","(520, 527)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for err in errors:
+    texts.append('Server {} {} port {} answered {}'.format(err[0], 'TCP' if err[1] else 'UDP', err[2], err[3]))","(142, 144)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for item in tuples:
+    addresses.append(item[4][0])","(1505, 1506)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for qname1 in e_nx.kwargs.get('qnames', []):
+    if qname1 not in qnames0:
+        qnames0.append()
+    if qname1 in responses1:
+        responses0[qname1] = responses1[qname1]","(105, 109)",0,F2L.2
+./dnspython.git/dns/resolver.py,"for (k, v) in self.data.items():
+    if v.expiration <= now:
+        keys_to_delete.append()","(341, 343)",1,F2L.2
+./dnspython.git/dns/resolver.py,"for socktype in socktypes:
+    for proto in _protocols_for_socktype[socktype]:
+        tuples.append((socket.AF_INET6, socktype, proto, cname, (addr, port, 0, 0)))","(1427, 1430)",1,F2L.5
+./dnspython.git/dns/resolver.py,"for socktype in socktypes:
+    for proto in _protocols_for_socktype[socktype]:
+        tuples.append((socket.AF_INET, socktype, proto, cname, (addr, port)))","(1433, 1436)",1,F2L.5
+./dnspython.git/dns/resolver.py,"for rdata in v6.rrset:
+    v6addrs.append(rdata.address)","(1383, 1384)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for rdata in v4.rrset:
+    v4addrs.append(rdata.address)","(1391, 1392)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for proto in _protocols_for_socktype[socktype]:
+    tuples.append((socket.AF_INET6, socktype, proto, cname, (addr, port, 0, 0)))","(1428, 1430)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for proto in _protocols_for_socktype[socktype]:
+    tuples.append((socket.AF_INET, socktype, proto, cname, (addr, port)))","(1434, 1436)",1,F2L.1
+./dnspython.git/dns/name.py,"for label in self.labels:
+    out.append(len(label))
+    if canonicalize:
+        out += label.lower()
+    else:
+        out += label","(628, 633)",1,F2L.1
+./dnspython.git/dns/name.py,"for label in origin.labels:
+    out.append(len(label))
+    if canonicalize:
+        out += label.lower()
+    else:
+        out += label","(637, 642)",1,F2L.1
+./dnspython.git/dns/zonefile.py,"for key in self.rdatasets:
+    if key[0] == name:
+        remove.append()","(493, 495)",1,F2L.2
+./dnspython.git/dns/rdtypes/util.py,"for k in sorted(by_priority.keys()):
+    rdatas = by_priority[k]
+    total = sum((rdata._processing_weight() or _no_weight for rdata in rdatas))
+    while len(rdatas) > 1:
+        r = random.uniform(0, total)
+        for (n, rdata) in enumerate(rdatas):
+            weight = rdata._processing_weight() or _no_weight
+            if weight > r:
+                break
+            r -= weight
+        total -= weight
+        ordered.append(rdata)
+        del rdatas[n]
+    ordered.append(rdatas[0])","(220, 234)",1,F2L.1
+./dnspython.git/dns/rdtypes/util.py,"for token in tok.get_remaining():
+    rdtype = dns.rdatatype.from_text(token.unescape().value)
+    if rdtype == 0:
+        raise dns.exception.SyntaxError(f'{cls.type_name} with bit 0')
+    rdtypes.append(rdtype)","(149, 153)",1,F2L.1
+./dnspython.git/dns/rdtypes/util.py,"for j in range(0, 8):
+    if byte & 128 >> j:
+        rdtype = window * 256 + i * 8 + j
+        bits.append()","(139, 142)",1,F2L.2
+./dnspython.git/dns/rdtypes/ANY/HIP.py,"for server in self.servers:
+    servers.append(server.choose_relativity(origin, relativize))","(53, 54)",1,F2L.1
+./dnspython.git/dns/rdtypes/IN/WKS.py,"for j in range(0, 8):
+    if byte & 128 >> j:
+        bits.append()","(55, 57)",1,F2L.2
+./dnspython.git/dns/rdtypes/IN/WKS.py,"for _ in range(l, i + 1):
+    bitmap.append(0)","(86, 87)",1,F2L.1
+./dnspython.git/dns/rdtypes/txtbase.py,"for token in tok.get_remaining():
+    token = token.unescape_to_bytes()
+    if not (token.is_quoted_string() or token.is_identifier()):
+        raise dns.exception.SyntaxError('expected a string')
+    if len(token.value) > 255:
+        raise dns.exception.SyntaxError('string too long')
+    strings.append(token.value)","(64, 73)",0,F2L.1
+./dnspython.git/dns/ipv6.py,"for _ in range(0, 8 - l + 1):
+    canonical.append(b'0000')","(170, 171)",0,F2L.1
+./dnspython.git/dns/win32util.py,"for ns in ns_list:
+    if ns not in self.info.nameservers:
+        self.info.nameservers.append()","(93, 95)",1,F2L.2
+./dnspython.git/dns/renderer.py,"for (k, v) in self.compress.items():
+    if v >= where:
+        keys_to_delete.append()","(107, 109)",1,F2L.2
+./dnspython.git/examples/zonediff.py,"for name in zone2:
+    n3 = cast(dns.node.Node, zone1.get_node(name))
+    if not n3:
+        n4 = cast(dns.node.Node, zone2.get_node(name))
+        changes.append()","(67, 71)",1,F2L.2
+./dnspython.git/tests/test_transaction.py,"for key in self.rdatasets.keys():
+    if key[0] == name:
+        remove.append()","(53, 55)",1,F2L.2
+./dnspython.git/tests/test_dnssec.py,"for (name, key_rrset) in abs_keys.items():
+    keys[name] = dns.node.Node()
+    keys[name].rdatasets.append(key_rrset.to_rdataset())","(184, 186)",0,F2L.1
+./dnspython.git/tests/test_dnssec.py,"for rdata in [example_ds_sha1, example_ds_sha256, example_ds_sha384]:
+    (flags, digest) = rdata.to_text().rsplit(' ', 1)
+    dns.rdata.from_text(dns.rdataclass.IN, dns.rdatatype.DS, f'{flags} {digest}')
+    test_records.append(f'{flags} {digest[:len(digest) // 2]}')
+    test_records.append(f'{flags} {digest * 2}')","(284, 288)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for qname1 in e_nx.kwargs.get('qnames', []):
+    if qname1 not in qnames0:
+        qnames0.append()
+    if qname1 in responses1:
+        responses0[qname1] = responses1[qname1]","(81, 85)",0,F2L.2
+./dnspython.git/dns/resolver.py,"for (k, v) in self.data.items():
+    if v.expiration <= now:
+        keys_to_delete.append()","(290, 292)",1,F2L.2
+./dnspython.git/dns/resolver.py,"for socktype in socktypes:
+    for proto in _protocols_for_socktype[socktype]:
+        tuples.append((socket.AF_INET6, socktype, proto, cname, (addr, port, 0, 0)))","(1146, 1148)",1,F2L.5
+./dnspython.git/dns/resolver.py,"for socktype in socktypes:
+    for proto in _protocols_for_socktype[socktype]:
+        tuples.append((socket.AF_INET, socktype, proto, cname, (addr, port)))","(1151, 1153)",1,F2L.5
+./dnspython.git/dns/resolver.py,"for rdata in v6.rrset:
+    v6addrs.append(rdata.address)","(1108, 1109)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for rdata in v4.rrset:
+    v4addrs.append(rdata.address)","(1115, 1116)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for proto in _protocols_for_socktype[socktype]:
+    tuples.append((socket.AF_INET6, socktype, proto, cname, (addr, port, 0, 0)))","(1147, 1148)",1,F2L.1
+./dnspython.git/dns/resolver.py,"for proto in _protocols_for_socktype[socktype]:
+    tuples.append((socket.AF_INET, socktype, proto, cname, (addr, port)))","(1152, 1153)",1,F2L.1
+./dnspython.git/dns/name.py,"for label in self.labels:
+    out.append(len(label))
+    if canonicalize:
+        out += label.lower()
+    else:
+        out += label","(554, 559)",1,F2L.1
+./dnspython.git/dns/name.py,"for label in origin.labels:
+    out.append(len(label))
+    if canonicalize:
+        out += label.lower()
+    else:
+        out += label","(563, 568)",1,F2L.1
+./dnspython.git/dns/zonefile.py,"for key in self.rdatasets:
+    if key[0] == name:
+        remove.append()","(365, 367)",1,F2L.2
+./dnspython.git/dns/rdtypes/util.py,"for k in sorted(by_priority.keys()):
+    rdatas = by_priority[k]
+    total = sum((rdata._processing_weight() or _no_weight for rdata in rdatas))
+    while len(rdatas) > 1:
+        r = random.uniform(0, total)
+        for (n, rdata) in enumerate(rdatas):
+            weight = rdata._processing_weight() or _no_weight
+            if weight > r:
+                break
+            r -= weight
+        total -= weight
+        ordered.append(rdata)
+        del rdatas[n]
+    ordered.append(rdatas[0])","(192, 205)",1,F2L.1
+./dnspython.git/dns/rdtypes/util.py,"for token in tok.get_remaining():
+    rdtype = dns.rdatatype.from_text(token.unescape().value)
+    if rdtype == 0:
+        raise dns.exception.SyntaxError(f'{cls.type_name} with bit 0')
+    rdtypes.append(rdtype)","(123, 127)",1,F2L.1
+./dnspython.git/dns/rdtypes/util.py,"for j in range(0, 8):
+    if byte & 128 >> j:
+        rdtype = window * 256 + i * 8 + j
+        bits.append()","(113, 116)",1,F2L.2
+./dnspython.git/dns/rdtypes/IN/WKS.py,"for j in range(0, 8):
+    if byte & 128 >> j:
+        bits.append()","(31, 33)",1,F2L.2
+./dnspython.git/dns/rdtypes/IN/WKS.py,"for _ in range(l, i + 1):
+    bitmap.append(0)","(61, 62)",1,F2L.1
+./dnspython.git/dns/rdtypes/txtbase.py,"for token in tok.get_remaining():
+    token = token.unescape_to_bytes()
+    if not (token.is_quoted_string() or token.is_identifier()):
+        raise dns.exception.SyntaxError('expected a string')
+    if len(token.value) > 255:
+        raise dns.exception.SyntaxError('string too long')
+    strings.append(token.value)","(40, 46)",0,F2L.1
+./dnspython.git/dns/ipv6.py,"for _ in range(0, 8 - l + 1):
+    canonical.append(b'0000')","(120, 121)",0,F2L.1
+./dnspython.git/dns/rdtypes/util.py,"for k in sorted(by_priority.keys()):
+    rdatas = by_priority[k]
+    total = sum((rdata._processing_weight() or _no_weight for rdata in rdatas))
+    while len(rdatas) > 1:
+        r = random.uniform(0, total)
+        for (n, rdata) in enumerate(rdatas):
+            weight = rdata._processing_weight() or _no_weight
+            if weight > r:
+                break
+            r -= weight
+        total -= weight
+        ordered.append(rdata)
+        del rdatas[n]
+    ordered.append(rdatas[0])","(192, 205)",1,F2L.1
+./dnspython.git/dns/rdtypes/util.py,"for token in tok.get_remaining():
+    rdtype = dns.rdatatype.from_text(token.unescape().value)
+    if rdtype == 0:
+        raise dns.exception.SyntaxError(f'{cls.type_name} with bit 0')
+    rdtypes.append(rdtype)","(123, 127)",1,F2L.1
+./dnspython.git/dns/rdtypes/util.py,"for j in range(0, 8):
+    if byte & 128 >> j:
+        rdtype = window * 256 + i * 8 + j
+        bits.append()","(113, 116)",1,F2L.2
+./dnspython.git/dns/rdtypes/IN/WKS.py,"for j in range(0, 8):
+    if byte & 128 >> j:
+        bits.append()","(31, 33)",1,F2L.2
+./dnspython.git/dns/rdtypes/IN/WKS.py,"for _ in range(l, i + 1):
+    bitmap.append(0)","(61, 62)",1,F2L.1
+./dnspython.git/dns/rdtypes/txtbase.py,"for token in tok.get_remaining():
+    token = token.unescape_to_bytes()
+    if not (token.is_quoted_string() or token.is_identifier()):
+        raise dns.exception.SyntaxError('expected a string')
+    if len(token.value) > 255:
+        raise dns.exception.SyntaxError('string too long')
+    strings.append(token.value)","(40, 46)",0,F2L.1
+./dnspython.git/dns/rdtypes/IN/WKS.py,"for j in range(0, 8):
+    if byte & 128 >> j:
+        bits.append()","(31, 33)",1,F2L.2
+./dnspython.git/dns/rdtypes/IN/WKS.py,"for _ in range(l, i + 1):
+    bitmap.append(0)","(61, 62)",1,F2L.1
+./mesa.git/tests/test_grid.py,"for x in range(width):
+    for y in range(height):
+        if TEST_GRID[x][y] == 0:
+            continue
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(51, 59)",0,F2L.5
+./mesa.git/tests/test_grid.py,"for x in range(width):
+    for y in range(height):
+        if TEST_GRID[x][y] == 0:
+            continue
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(227, 235)",1,F2L.5
+./mesa.git/tests/test_grid.py,"for x in range(width):
+    for y in range(height):
+        if TEST_GRID[x][y] == 0:
+            continue
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(357, 365)",1,F2L.5
+./mesa.git/tests/test_grid.py,"for x in range(width):
+    for y in range(height):
+        if TEST_GRID[x][y] == 0:
+            continue
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(410, 418)",1,F2L.5
+./mesa.git/tests/test_grid.py,"for y in range(height):
+    for i in range(TEST_MULTIGRID[x][y]):
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(300, 306)",1,F2L.5
+./mesa.git/mesa/batchrunner.py,"for params in self.parameters_list:
+    kwargs = params.copy()
+    kwargs.update(self.fixed_parameters)
+    all_kwargs.append(kwargs)
+    all_param_values.append(list(params.values()))","(332, 336)",1,F2L.1
+./mesa.git/mesa/batchrunner.py,"for params in self.parameters_list:
+    kwargs = params.copy()
+    kwargs.update(self.fixed_parameters)
+    for iter in range(self.iterations):
+        kwargs_repeated = kwargs.copy()
+        all_kwargs.append([self.model_cls, kwargs_repeated, self.max_steps, iter])","(646, 654)",1,F2L.5
+./mesa.git/mesa/batchrunner.py,"for kwargs in kwargs_list:
+    (_, rawdata) = process_func(kwargs)
+    run_id = next(run_counter)
+    data = []
+    for run_data in rawdata:
+        out = {'RunId': run_id, 'iteration': iteration - 1}
+        out.update(run_data)
+        data.append(out)
+    results.extend(data)
+    pbar.update()","(88, 97)",1,F2L.5
+./mesa.git/mesa/batchrunner.py,"for iter in range(self.iterations):
+    kwargs_repeated = kwargs.copy()
+    all_kwargs.append([self.model_cls, kwargs_repeated, self.max_steps, iter])","(650, 654)",1,F2L.1
+./mesa.git/mesa/space.py,"for rows in self.grid[x]:
+    for cell in rows[y]:
+        cells.append(cell)","(162, 164)",1,F2L.5
+./mesa.git/mesa/space.py,"for y in range(self.height):
+    col.append(self.default_val())","(88, 89)",1,F2L.1
+./mesa.git/mesa/space.py,"for pos in index:
+    (x1, y1) = self.torus_adj(pos)
+    cells.append(self.grid[x1][y1])","(136, 138)",1,F2L.1
+./mesa.git/mesa/space.py,"for cell in rows[y]:
+    cells.append(cell)","(163, 164)",1,F2L.1
+./mesa.git/examples/color_patches/color_patches/model.py,"for neighbor in polled_opinions:
+    if neighbor[1] == polled_opinions[0][1]:
+        tied_opinions.append()","(57, 59)",1,F2L.2
+./mesa.git/examples/epstein_civil_violence/epstein_civil_violence/agent.py,"for agent in self.neighbors:
+    if agent.breed == 'citizen' and agent.condition == 'Active' and (agent.jail_sentence == 0):
+        active_neighbors.append()","(165, 171)",1,F2L.2
+./mesa.git/tests/test_grid.py,"for x in range(width):
+    for y in range(height):
+        if TEST_GRID[x][y] == 0:
+            continue
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(36, 43)",0,F2L.5
+./mesa.git/tests/test_grid.py,"for x in range(width):
+    for y in range(height):
+        if TEST_GRID[x][y] == 0:
+            continue
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(187, 194)",1,F2L.5
+./mesa.git/tests/test_grid.py,"for x in range(width):
+    for y in range(height):
+        if TEST_GRID[x][y] == 0:
+            continue
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(286, 293)",1,F2L.5
+./mesa.git/tests/test_grid.py,"for x in range(width):
+    for y in range(height):
+        if TEST_GRID[x][y] == 0:
+            continue
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(329, 336)",1,F2L.5
+./mesa.git/tests/test_grid.py,"for y in range(height):
+    for i in range(TEST_MULTIGRID[x][y]):
+        counter += 1
+        a = MockAgent(counter, None)
+        self.agents.append(a)
+        self.grid.place_agent(a, (x, y))","(238, 243)",1,F2L.5
+./mesa.git/mesa/batchrunner.py,"for params in self.parameters_list:
+    kwargs = params.copy()
+    kwargs.update(self.fixed_parameters)
+    all_kwargs.append(kwargs)
+    all_param_values.append(list(params.values()))","(241, 245)",1,F2L.1
+./mesa.git/mesa/batchrunner.py,"for params in self.parameters_list:
+    kwargs = params.copy()
+    kwargs.update(self.fixed_parameters)
+    for iter in range(self.iterations):
+        kwargs_repeated = kwargs.copy()
+        all_kwargs.append([self.model_cls, kwargs_repeated, self.max_steps, iter])","(486, 491)",1,F2L.5
+./mesa.git/mesa/batchrunner.py,"for kwargs in kwargs_list:
+    (_, rawdata) = process_func(kwargs)
+    run_id = next(run_counter)
+    data = []
+    for run_data in rawdata:
+        out = {'RunId': run_id, 'iteration': iteration - 1}
+        out.update(run_data)
+        data.append(out)
+    results.extend(data)
+    pbar.update()","(51, 60)",1,F2L.5
+./mesa.git/mesa/batchrunner.py,"for iter in range(self.iterations):
+    kwargs_repeated = kwargs.copy()
+    all_kwargs.append([self.model_cls, kwargs_repeated, self.max_steps, iter])","(489, 491)",1,F2L.1
+./mesa.git/mesa/space.py,"for x in range(self.width):
+    col: List[GridContent] = []
+    for y in range(self.height):
+        col.append(self.default_val())
+    self.grid.append(col)","(50, 54)",1,F2L.1
+./mesa.git/mesa/space.py,"for rows in self.grid[x]:
+    for cell in rows[y]:
+        cells.append(cell)","(99, 101)",1,F2L.5
+./mesa.git/mesa/space.py,"for y in range(self.height):
+    col.append(self.default_val())","(52, 53)",1,F2L.1
+./mesa.git/mesa/space.py,"for pos in index:
+    (x1, y1) = self.torus_adj(pos)
+    cells.append(self.grid[x1][y1])","(82, 84)",1,F2L.1
+./mesa.git/mesa/space.py,"for cell in rows[y]:
+    cells.append(cell)","(100, 101)",1,F2L.1
+./spotipy.git/examples/title_chain.py,"for item in results['tracks']['items']:
+    name = item['name'].lower()
+    if name in seen:
+        continue
+    seen.add(name)
+    if '(' in name:
+        continue
+    if '-' in name:
+        continue
+    if '/' in name:
+        continue
+    words = name.split()
+    if len(words) > 1 and words[0] == word and (words[-1] not in skiplist):
+        out.append()","(36, 51)",1,F2L.2
+./spotipy.git/examples/audio_features.py,"for (i, t) in enumerate(results['tracks']['items']):
+    print(' ', i, t['name'])
+    tids.append(t['uri'])","(27, 29)",1,F2L.1
+./spotipy.git/examples/remove_specific_tracks_from_playlist.py,"for t_pos in sys.argv[2:]:
+    (tid, pos) = t_pos.split(',')
+    track_ids.append({'uri': tid, 'positions': [int(pos)]})","(17, 19)",1,F2L.1
+./spotipy.git/spotipy/client.py,"for tr in tracks:
+    ftracks.append({'uri': self._get_uri('track', tr['uri']), 'positions': tr['positions']})","(933, 939)",1,F2L.1
+./spotipy.git/spotipy/client.py,"for tr in items:
+    ftracks.append({'uri': self._get_uri('track', tr['uri']), 'positions': tr['positions']})","(1124, 1130)",1,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    connectors.append({'id': c['id'], 'config': c['config'], 'service_status': c['service'].running})","(147, 151)",1,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    CIDs.append(c['id'])","(186, 187)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    new_data.append(user)","(17, 26)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_hex_content'] = True
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(72, 84)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(102, 113)",1,F2L.1
+./jasmin.git/jasmin/protocols/smpp/pb.py,"for bound_connection in self.smpps.bound_connections:
+    systemdids.append(bound_connection)","(59, 60)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/protocol.py,"for availableCmd in completetions:
+    if availableCmd.find(prefix) == 0:
+        foundCommands.append()","(182, 185)",1,F2L.2
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for user in users:
+    row = []
+    row.append('#%s' % user.uid)
+    row.append(user.getCnxStatus().smpps['bound_connections_count']['bind_receiver'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transmitter'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transceiver'])
+    row.append(formatDateTime(user.getCnxStatus().smpps['last_activity_at']))
+    row.append(user.getCnxStatus().httpapi['connects_count'])
+    row.append(formatDateTime(user.getCnxStatus().httpapi['last_activity_at']))
+    table.append(row)","(71, 81)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for connector in connectors:
+    row = []
+    row.append('#%s' % connector['id'])
+    row.append(formatDateTime(sc.get(connector['id']).get('connected_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('bound_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('disconnected_at')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('submit_sm_request_count'), sc.get(connector['id']).get('submit_sm_count')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('deliver_sm_count'), sc.get(connector['id']).get('data_sm_count')))
+    row.append(sc.get(connector['id']).get('throttling_error_count'))
+    row.append(sc.get(connector['id']).get('other_submit_error_count'))
+    table.append(row)","(116, 131)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/options.py,"for opt in option_list:
+    options_defined.append(pyparsing.Literal(opt.get_opt_string()))","(74, 75)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_smppccm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(28, 32)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_mtinterceptorm.py,"for item in results[:]:
+    filters.append('%sInterceptor' % item)","(179, 180)",1,F2L.1
+./sqlparse.git/sqlparse/engine/statement_splitter.py,"for (ttype, value) in stream:
+    if self.consume_ws and ttype not in EOS_TTYPE:
+        yield sql.Statement(self.tokens)
+        self._reset()
+    self.level += self._change_splitlevel(ttype, value)
+    self.tokens.append(sql.Token(ttype, value))
+    if self.level <= 0 and ttype is T.Punctuation and (value == ';'):
+        self.consume_ws = True","(88, 107)",0,F2L.1
+./sqlparse.git/sqlparse/sql.py,"for token in self.tokens:
+    if token.match(T.Keyword, 'CASE'):
+        continue
+    elif skip_ws and token.ttype in T.Whitespace:
+        continue
+    elif token.match(T.Keyword, 'WHEN'):
+        ret.append(([], []))
+        mode = CONDITION
+    elif token.match(T.Keyword, 'THEN'):
+        mode = VALUE
+    elif token.match(T.Keyword, 'ELSE'):
+        ret.append((None, []))
+        mode = VALUE
+    elif token.match(T.Keyword, 'END'):
+        mode = None
+    if mode and (not ret):
+        ret.append()
+    if mode == CONDITION:
+        ret[-1][0].append(token)
+    elif mode == VALUE:
+        ret[-1][1].append(token)","(582, 613)",0,F2L.2
+./jasmin.git/tests/protocols/cli/test_groupm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(13, 17)",1,F2L.1
+./sqlparse.git/sqlparse/engine/statement_splitter.py,"for (ttype, value) in stream:
+    if self.consume_ws and ttype not in EOS_TTYPE:
+        yield sql.Statement(self.tokens)
+        self._reset()
+    self.level += self._change_splitlevel(ttype, value)
+    self.tokens.append(sql.Token(ttype, value))
+    if self.level <= 0 and ttype is T.Punctuation and (value == ';'):
+        self.consume_ws = True","(54, 61)",0,F2L.1
+./sqlparse.git/sqlparse/sql.py,"for token in self.tokens:
+    if token.match(T.Keyword, 'CASE'):
+        continue
+    elif skip_ws and token.ttype in T.Whitespace:
+        continue
+    elif token.match(T.Keyword, 'WHEN'):
+        ret.append(([], []))
+        mode = CONDITION
+    elif token.match(T.Keyword, 'THEN'):
+        mode = VALUE
+    elif token.match(T.Keyword, 'ELSE'):
+        ret.append((None, []))
+        mode = VALUE
+    elif token.match(T.Keyword, 'END'):
+        mode = None
+    if mode and (not ret):
+        ret.append()
+    if mode == CONDITION:
+        ret[-1][0].append(token)
+    elif mode == VALUE:
+        ret[-1][1].append(token)","(492, 512)",0,F2L.2
+./sqlparse.git/sqlparse/engine/statement_splitter.py,"for (ttype, value) in stream:
+    if self.consume_ws and ttype not in EOS_TTYPE:
+        yield sql.Statement(self.tokens)
+        self._reset()
+    self.level += self._change_splitlevel(ttype, value)
+    self.tokens.append(sql.Token(ttype, value))
+    if self.level <= 0 and ttype is T.Punctuation and (value == ';'):
+        self.consume_ws = True","(54, 61)",0,F2L.1
+./jasmin.git/tests/protocols/cli/test_mxrouterm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(80, 84)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_userm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(28, 32)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_userm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(45, 49)",1,F2L.1
+./pycoin.git/pycoin/contrib/who_signed.py,"for public_pair in public_pairs:
+    if self._generator.verify(public_pair, sig_hash, sig_pair):
+        signed_by.append()","(86, 88)",1,F2L.2
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for i in range(count):
+    txs_in.append(class_.TxIn.parse(f))","(82, 83)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_mxinterceptorm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(60, 64)",1,F2L.1
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for i in range(count):
+    txs_out.append(class_.TxOut.parse(f))","(86, 87)",1,F2L.1
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for tx_in in self.txs_in:
+    if tx_in.is_coinbase():
+        unspents.append()
+        continue
+    tx = tx_db.get(tx_in.previous_hash)
+    if tx and tx.hash() == tx_in.previous_hash:
+        unspents.append(tx.txs_out[tx_in.previous_index])
+    elif ignore_missing:
+        unspents.append(None)
+    else:
+        raise KeyError(""can't find tx_out for %s:%d"" % (b2h_rev(tx_in.previous_hash), tx_in.previous_index))","(296, 307)",0,F2L.2
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for tx_in in txs_in:
+    stack = []
+    count = parse_satoshi_int(f)
+    for i in range(count):
+        stack.append(parse_satoshi_string(f))
+    tx_in.witness = stack","(90, 95)",1,F2L.5
+./jasmin.git/tests/protocols/cli/test_mxinterceptorm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(77, 81)",1,F2L.1
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for i in range(count):
+    stack.append(parse_satoshi_string(f))","(93, 94)",1,F2L.1
+./pycoin.git/pycoin/coins/tx_utils.py,"for payable in payables:
+    if len(payable) == 2:
+        (address, coin_value) = payable
+    else:
+        address = payable
+        coin_value = 0
+    script = network.contract.for_address(address)
+    txs_out.append(Tx.TxOut(coin_value, script))","(58, 65)",0,F2L.1
+./jasmin.git/tests/protocols/cli/test_mointerceptorm.py,"for item in results[:]:
+    filters.append('%sInterceptor' % item)","(181, 182)",1,F2L.1
+./pycoin.git/pycoin/services/blockchain_info.py,"for u in r['unspent_outputs']:
+    coin_value = u['value']
+    script = h2b(u['script'])
+    previous_hash = h2b(u['tx_hash'])
+    previous_index = u['tx_output_n']
+    spendables.append(Tx.Spendable(coin_value, script, previous_hash, previous_index))","(55, 60)",1,F2L.1
+./pycoin.git/pycoin/services/insight.py,"for vin in r.get('vin'):
+    if 'coinbase' in vin:
+        previous_hash = b'\x00' * 32
+        script = h2b(vin.get('coinbase'))
+        previous_index = 4294967295
+    else:
+        previous_hash = h2b_rev(vin.get('txid'))
+        scriptSig = vin.get('scriptSig')
+        if 'hex' in scriptSig:
+            script = h2b(scriptSig.get('hex'))
+        else:
+            script = BitcoinScriptTools.compile(scriptSig.get('asm'))
+        previous_index = vin.get('vout')
+    sequence = vin.get('sequence')
+    txs_in.append(Tx.TxIn(previous_hash, previous_index, script, sequence))","(115, 129)",1,F2L.1
+./pycoin.git/pycoin/services/insight.py,"for vout in r.get('vout'):
+    coin_value = btc_to_satoshi(decimal.Decimal(vout.get('value')))
+    script = BitcoinScriptTools.compile(vout.get('scriptPubKey').get('asm'))
+    txs_out.append(Tx.TxOut(coin_value, script))","(131, 134)",1,F2L.1
+./pycoin.git/pycoin/services/insight.py,"for u in r:
+    coin_value = btc_to_satoshi(str(u.get('amount')))
+    script = h2b(u.get('scriptPubKey'))
+    previous_hash = h2b_rev(u.get('txid'))
+    previous_index = u.get('vout')
+    spendables.append(Tx.Spendable(coin_value, script, previous_hash, previous_index))","(82, 87)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_filtersm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(16, 20)",1,F2L.1
+./pycoin.git/pycoin/services/chain_so.py,"for u in r['data']['txs']:
+    coin_value = int(float(u['value']) * 100000000)
+    script = h2b(u['script_hex'])
+    previous_hash = h2b_rev(u['txid'])
+    previous_index = u['output_no']
+    spendables.append(Tx.Spendable(coin_value, script, previous_hash, previous_index))","(38, 43)",1,F2L.1
+./pycoin.git/pycoin/services/blockcypher.py,"for txn in result.get('txrefs', []):
+    coin_value = txn.get('value')
+    script = h2b(txn.get('script'))
+    previous_hash = h2b_rev(txn.get('tx_hash'))
+    previous_index = txn.get('tx_output_n')
+    spendables.append(Tx.Spendable(coin_value, script, previous_hash, previous_index))","(41, 46)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_httpccm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(13, 17)",1,F2L.1
+./pycoin.git/pycoin/blockchain/BlockChain.py,"for (idx, h) in enumerate(headers_iter):
+    the_hash = h.hash()
+    self._locked_chain.append((the_hash, h.previous_block_hash, h.difficulty))
+    self.hash_to_index_lookup[the_hash] = idx","(47, 50)",1,F2L.1
+./pycoin.git/pycoin/merkle.py,"for i in range(0, len(hashes), 2):
+    items.append(hash_f(hashes[i] + hashes[i + 1]))","(22, 23)",1,F2L.1
+./pycoin.git/pycoin/serialize/streamer.py,"for j in range(count):
+    if len(subfmt) == 1:
+        array.append(self.parse_struct(subfmt, f)[0])
+    else:
+        array.append(self.parse_struct(subfmt, f))","(35, 39)",1,F2L.3
+./pycoin.git/pycoin/vm/annotate.py,"for pair in pairs:
+    for comp in (True, False):
+        hash160 = public_pair_to_hash160_sec(pair, compressed=comp)
+        address = self._address.for_p2pkh(hash160)
+        addresses.append(address)","(64, 68)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/cygwinccompiler.py,"for src_name in source_filenames:
+    (base, ext) = os.path.splitext(os.path.normcase(src_name))
+    if ext not in self.src_extensions + ['.rc', '.res']:
+        raise UnknownFileError(""unknown file type '%s' (from '%s')"" % (ext, src_name))
+    if strip_dir:
+        base = os.path.basename(base)
+    if ext in ('.res', '.rc'):
+        obj_names.append(os.path.join(output_dir, base + ext + self.obj_extension))
+    else:
+        obj_names.append(os.path.join(output_dir, base + self.obj_extension))","(266, 280)",1,F2L.3
+./pycoin.git/pycoin/vm/annotate.py,"for (idx, (opcode, data, pc, new_pc)) in enumerate(itertools.chain(self._script_tools.get_opcodes(tx.unspents[tx_in_idx].script), self._script_tools.get_opcodes(tx.txs_in[tx_in_idx].script))):
+    if idx >= len(r):
+        r.append()","(132, 136)",1,F2L.2
+./pycoin.git/pycoin/solve/some_solvers.py,"for (signature_order, sec_key) in reversed(list(enumerate(sec_keys))):
+    sec_key = solved_values.get(sec_key, sec_key)
+    if sec_key in secs_solved:
+        continue
+    if len(existing_signatures) >= len(signature_variables):
+        break
+    result = db.get(hash160(sec_key))
+    if result:
+        secret_exponent = result[0]
+        sig_hash = signature_for_hash_type_f(signature_type)
+        generator = result[3]
+        (r, s) = generator.sign(secret_exponent, sig_hash)
+    else:
+        generator = generator_for_signature_type_f(signature_type)
+        public_pair = sec_to_public_pair(sec_key, generator=generator)
+        for sig in all_signature_hints(public_pair, signature_for_hash_type_f, **kwargs):
+            sig_hash = signature_for_hash_type_f(indexbytes(sig, -1))
+            sig_pair = der.sigdecode_der(sig[:-1])
+            if generator.verify(public_pair, sig_hash, sig_pair):
+                (r, s) = sig_pair
+                break
+        else:
+            continue
+    order = generator.order()
+    if s + s > order:
+        s = order - s
+    binary_signature = der.sigencode_der(r, s) + int2byte(signature_type)
+    existing_signatures.append((signature_order, binary_signature))","(117, 145)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/cygwinccompiler.py,"for sym in export_symbols:
+    contents.append(sym)","(221, 222)",1,F2L.1
+./pycoin.git/pycoin/solve/some_solvers.py,"for (idx, sec_key) in enumerate(sec_keys):
+    public_pair = sec_to_public_pair(sec_key, generator)
+    sign_value = signature_for_hash_type_f(signature_type)
+    v = generator.verify(public_pair, sign_value, sig_pair)
+    if v:
+        signatures.append()
+        secs_solved.add(sec_key)
+        break","(37, 44)",1,F2L.2
+./pycoin.git/pycoin/solve/constraints.py,"for i in range(key_count):
+    constraints.append(Operator('IS_PUBKEY', vm.stack[-1]))
+    public_pair_blobs.append(vm.stack.pop())","(126, 128)",0,F2L.1
+./pycoin.git/pycoin/solve/constraints.py,"for i in range(signature_count):
+    constraints.append(Operator('IS_SIGNATURE', vm.stack[-1]))
+    sig_blobs.append(vm.stack.pop())","(131, 133)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/check.py,"for attr in ('name', 'version', 'url'):
+    if not (hasattr(metadata, attr) and getattr(metadata, attr)):
+        missing.append()","(97, 99)",1,F2L.2
+./pycoin.git/pycoin/wallet/SQLite3Wallet.py,"for spendable in self.persistence.unspent_spendables(lbi, confirmations=1):
+    spendables.append(spendable)
+    total_input_value += spendable.coin_value
+    if total_input_value >= amount + estimated_fee and len(spendables) > 1:
+        break","(56, 60)",1,F2L.1
+./pycoin.git/tests/cmds/cmdline_test.py,"for fn in filenames:
+    if fn.endswith('.txt') and fn[0] != '.':
+        paths.append()","(23, 25)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/install.py,"for filename in cmd.get_outputs():
+    if filename not in outputs:
+        outputs.append()","(632, 634)",1,F2L.2
+./pycoin.git/tests/blockchain_test.py,"for idx in range(self.length()):
+    c.append(self.hash_for_index(idx))","(24, 25)",1,F2L.1
+./pycoin.git/tests/blockchain_test.py,"for idx in range(self.locked_length(), self.length()):
+    c.append(self.hash_for_index(idx))","(31, 32)",1,F2L.1
+./pycoin.git/tests/sighash_single_test.py,"for k in [k1, k2]:
+    coinbase_tx.txs_out.append(network.tx.TxOut(1000000000, network.script.compile('%s OP_CHECKSIG' % b2h(k.sec()))))","(62, 64)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/install_lib.py,"for file in build_files:
+    outputs.append(os.path.join(output_dir, file[prefix_len:]))","(157, 158)",1,F2L.1
+./pycoin.git/tests/build_tx_test.py,"for (coin_value, address) in coins_to:
+    txs_out.append(Tx.TxOut(coin_value, network.contract.for_address(address)))","(62, 63)",1,F2L.1
+./pycoin.git/pycoin/contrib/who_signed.py,"for public_pair in public_pairs:
+    if self._generator.verify(public_pair, sig_hash, sig_pair):
+        signed_by.append()","(76, 78)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/install_lib.py,"for py_file in py_filenames:
+    ext = os.path.splitext(os.path.normcase(py_file))[1]
+    if ext != PYTHON_SOURCE_EXTENSION:
+        continue
+    if self.compile:
+        bytecode_files.append()
+    if self.optimize > 0:
+        bytecode_files.append()","(164, 176)",1,F2L.2
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for tx_in in self.txs_in:
+    if tx_in.is_coinbase():
+        unspents.append()
+        continue
+    tx = tx_db.get(tx_in.previous_hash)
+    if tx and tx.hash() == tx_in.previous_hash:
+        unspents.append(tx.txs_out[tx_in.previous_index])
+    elif ignore_missing:
+        unspents.append(None)
+    else:
+        raise KeyError(""can't find tx_out for %s:%d"" % (b2h_rev(tx_in.previous_hash), tx_in.previous_index))","(270, 280)",0,F2L.2
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for tx_in in txs_in:
+    stack = []
+    count = parse_satoshi_int(f)
+    for i in range(count):
+        stack.append(parse_satoshi_string(f))
+    tx_in.witness = stack","(77, 82)",1,F2L.5
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for i in range(count):
+    stack.append(parse_satoshi_string(f))","(80, 81)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/bdist_wininst.py,"for name in ['author', 'author_email', 'description', 'maintainer', 'maintainer_email', 'name', 'url', 'version']:
+    data = getattr(metadata, name, '')
+    if data:
+        info = info + '\n    %s: %s' % (name.capitalize(), escape(data))
+        lines.append()","(224, 230)",1,F2L.2
+./pycoin.git/pycoin/coins/tx_utils.py,"for payable in payables:
+    if len(payable) == 2:
+        (address, coin_value) = payable
+    else:
+        address = payable
+        coin_value = 0
+    script = network.contract.for_address(address)
+    txs_out.append(Tx.TxOut(coin_value, script))","(53, 60)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/build_ext.py,"for ext in self.extensions:
+    outputs.append(self.get_ext_fullpath(ext.name))","(444, 445)",1,F2L.1
+./pycoin.git/pycoin/services/blockchain_info.py,"for u in r['unspent_outputs']:
+    coin_value = u['value']
+    script = h2b(u['script'])
+    previous_hash = h2b(u['tx_hash'])
+    previous_index = u['tx_output_n']
+    spendables.append(Tx.Spendable(coin_value, script, previous_hash, previous_index))","(53, 58)",1,F2L.1
+./pycoin.git/pycoin/vm/annotate.py,"for pair in pairs:
+    for comp in (True, False):
+        hash160 = public_pair_to_hash160_sec(pair, compressed=comp)
+        address = self._address.for_p2pkh(hash160)
+        addresses.append(address)","(62, 66)",1,F2L.5
+./pycoin.git/pycoin/vm/annotate.py,"for (idx, (opcode, data, pc, new_pc)) in enumerate(itertools.chain(self._script_tools.get_opcodes(tx.unspents[tx_in_idx].script), self._script_tools.get_opcodes(tx.txs_in[tx_in_idx].script))):
+    if idx >= len(r):
+        r.append()","(122, 124)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/build_ext.py,"for undef in ext.undef_macros:
+    macros.append((undef,))","(531, 532)",1,F2L.1
+./pycoin.git/pycoin/vm/ScriptTools.py,"for (opcode, data, pc, new_pc) in self.get_opcodes(script):
+    opcodes.append(self.disassemble_for_opcode_data(opcode, data))","(77, 78)",1,F2L.1
+./pycoin.git/pycoin/solve/some_solvers.py,"for (signature_order, sec_key) in reversed(list(enumerate(sec_keys))):
+    sec_key = solved_values.get(sec_key, sec_key)
+    if sec_key in secs_solved:
+        continue
+    if len(existing_signatures) >= len(signature_variables):
+        break
+    result = db.get(hash160(sec_key))
+    if result:
+        secret_exponent = result[0]
+        sig_hash = signature_for_hash_type_f(signature_type)
+        generator = result[3]
+        (r, s) = generator.sign(secret_exponent, sig_hash)
+    else:
+        generator = generator_for_signature_type_f(signature_type)
+        public_pair = sec_to_public_pair(sec_key, generator=generator)
+        for sig in all_signature_hints(public_pair, signature_for_hash_type_f, **kwargs):
+            sig_hash = signature_for_hash_type_f(indexbytes(sig, -1))
+            sig_pair = der.sigdecode_der(sig[:-1])
+            if generator.verify(public_pair, sig_hash, sig_pair):
+                (r, s) = sig_pair
+                break
+        else:
+            continue
+    order = generator.order()
+    if s + s > order:
+        s = order - s
+    binary_signature = der.sigencode_der(r, s) + int2byte(signature_type)
+    existing_signatures.append((signature_order, binary_signature))","(94, 121)",1,F2L.1
+./pycoin.git/pycoin/solve/some_solvers.py,"for (idx, sec_key) in enumerate(sec_keys):
+    public_pair = sec_to_public_pair(sec_key, generator)
+    sign_value = signature_for_hash_type_f(signature_type)
+    v = generator.verify(public_pair, sign_value, sig_pair)
+    if v:
+        signatures.append()
+        secs_solved.add(sec_key)
+        break","(30, 37)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/build_ext.py,"for o in extension.swig_opts:
+    swig_cmd.append(o)","(611, 612)",1,F2L.1
+./pycoin.git/pycoin/solve/constraints.py,"for i in range(key_count):
+    constraints.append(Operator('IS_PUBKEY', vm.stack[-1]))
+    public_pair_blobs.append(vm.stack.pop())","(121, 123)",0,F2L.1
+./pycoin.git/pycoin/solve/constraints.py,"for i in range(signature_count):
+    constraints.append(Operator('IS_SIGNATURE', vm.stack[-1]))
+    sig_blobs.append(vm.stack.pop())","(126, 128)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/bdist_msi.py,"for version in self.versions + [self.other_version]:
+    target = 'TARGETDIR' + version
+    name = default = 'Python' + version
+    desc = 'Everything'
+    if version is self.other_version:
+        title = 'Python from another location'
+        level = 2
+    else:
+        title = 'Python %s from registry' % version
+        level = 1
+    f = Feature(db, name, title, desc, 1, level, directory=target)
+    dir = Directory(db, cab, root, rootdir, target, default)
+    items.append((f, dir, version))","(291, 303)",1,F2L.1
+./pycoin.git/pycoin/contrib/who_signed.py,"for public_pair in public_pairs:
+    if self._generator.verify(public_pair, sig_hash, sig_pair):
+        signed_by.append()","(76, 78)",1,F2L.2
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for tx_in in self.txs_in:
+    if tx_in.is_coinbase():
+        unspents.append()
+        continue
+    tx = tx_db.get(tx_in.previous_hash)
+    if tx and tx.hash() == tx_in.previous_hash:
+        unspents.append(tx.txs_out[tx_in.previous_index])
+    elif ignore_missing:
+        unspents.append(None)
+    else:
+        raise KeyError(""can't find tx_out for %s:%d"" % (b2h_rev(tx_in.previous_hash), tx_in.previous_index))","(270, 280)",0,F2L.2
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for tx_in in txs_in:
+    stack = []
+    count = parse_satoshi_int(f)
+    for i in range(count):
+        stack.append(parse_satoshi_string(f))
+    tx_in.witness = stack","(77, 82)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/bdist.py,"for format in bdist.format_commands:
+    formats.append(('formats=' + format, None, bdist.format_command[format][1]))","(21, 23)",1,F2L.1
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for i in range(count):
+    stack.append(parse_satoshi_string(f))","(80, 81)",1,F2L.1
+./pycoin.git/pycoin/coins/tx_utils.py,"for payable in payables:
+    if len(payable) == 2:
+        (address, coin_value) = payable
+    else:
+        address = payable
+        coin_value = 0
+    script = network.contract.for_address(address)
+    txs_out.append(Tx.TxOut(coin_value, script))","(53, 60)",0,F2L.1
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for tx_in in self.txs_in:
+    if tx_in.is_coinbase():
+        unspents.append()
+        continue
+    tx = tx_db.get(tx_in.previous_hash)
+    if tx and tx.hash() == tx_in.previous_hash:
+        unspents.append(tx.txs_out[tx_in.previous_index])
+    elif ignore_missing:
+        unspents.append(None)
+    else:
+        raise KeyError(""can't find tx_out for %s:%d"" % (b2h_rev(tx_in.previous_hash), tx_in.previous_index))","(270, 280)",0,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/sdist.py,"for format in ARCHIVE_FORMATS.keys():
+    formats.append(('formats=' + format, None, ARCHIVE_FORMATS[format][2]))","(32, 34)",1,F2L.1
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for tx_in in txs_in:
+    stack = []
+    count = parse_satoshi_int(f)
+    for i in range(count):
+        stack.append(parse_satoshi_string(f))
+    tx_in.witness = stack","(77, 82)",1,F2L.5
+./pycoin.git/pycoin/coins/bitcoin/Tx.py,"for i in range(count):
+    stack.append(parse_satoshi_string(f))","(80, 81)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/sdist.py,"for (pkg, src_dir, build_dir, filenames) in build_py.data_files:
+    for filename in filenames:
+        self.filelist.append(os.path.join(src_dir, filename))","(292, 294)",1,F2L.5
+./pycoin.git/pycoin/services/blockchain_info.py,"for u in r['unspent_outputs']:
+    coin_value = u['value']
+    script = h2b(u['script'])
+    previous_hash = h2b(u['tx_hash'])
+    previous_index = u['tx_output_n']
+    spendables.append(Tx.Spendable(coin_value, script, previous_hash, previous_index))","(53, 58)",1,F2L.1
+./pycoin.git/pycoin/vm/annotate.py,"for pair in pairs:
+    for comp in (True, False):
+        hash160 = public_pair_to_hash160_sec(pair, compressed=comp)
+        address = self._address.for_p2pkh(hash160)
+        addresses.append(address)","(62, 66)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/sdist.py,"for filename in filenames:
+    self.filelist.append(os.path.join(src_dir, filename))","(293, 294)",1,F2L.1
+./pycoin.git/pycoin/vm/annotate.py,"for (idx, (opcode, data, pc, new_pc)) in enumerate(itertools.chain(self._script_tools.get_opcodes(tx.unspents[tx_in_idx].script), self._script_tools.get_opcodes(tx.txs_in[tx_in_idx].script))):
+    if idx >= len(r):
+        r.append()","(122, 124)",1,F2L.2
+./pycoin.git/pycoin/solve/some_solvers.py,"for (signature_order, sec_key) in reversed(list(enumerate(sec_keys))):
+    sec_key = solved_values.get(sec_key, sec_key)
+    if sec_key in secs_solved:
+        continue
+    if len(existing_signatures) >= len(signature_variables):
+        break
+    result = db.get(hash160(sec_key))
+    if result:
+        secret_exponent = result[0]
+        sig_hash = signature_for_hash_type_f(signature_type)
+        generator = result[3]
+        (r, s) = generator.sign(secret_exponent, sig_hash)
+    else:
+        generator = generator_for_signature_type_f(signature_type)
+        public_pair = sec_to_public_pair(sec_key, generator=generator)
+        for sig in all_signature_hints(public_pair, signature_for_hash_type_f, **kwargs):
+            sig_hash = signature_for_hash_type_f(indexbytes(sig, -1))
+            sig_pair = der.sigdecode_der(sig[:-1])
+            if generator.verify(public_pair, sig_hash, sig_pair):
+                (r, s) = sig_pair
+                break
+        else:
+            continue
+    order = generator.order()
+    if s + s > order:
+        s = order - s
+    binary_signature = der.sigencode_der(r, s) + int2byte(signature_type)
+    existing_signatures.append((signature_order, binary_signature))","(94, 121)",1,F2L.1
+./pycoin.git/pycoin/solve/some_solvers.py,"for (idx, sec_key) in enumerate(sec_keys):
+    public_pair = sec_to_public_pair(sec_key, generator)
+    sign_value = signature_for_hash_type_f(signature_type)
+    v = generator.verify(public_pair, sign_value, sig_pair)
+    if v:
+        signatures.append()
+        secs_solved.add(sec_key)
+        break","(30, 37)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/sdist.py,"for fn in alts:
+    if self._cs_path_exists(fn):
+        got_it = True
+        self.filelist.append()
+        break","(259, 263)",1,F2L.2
+./pycoin.git/pycoin/solve/constraints.py,"for i in range(key_count):
+    constraints.append(Operator('IS_PUBKEY', vm.stack[-1]))
+    public_pair_blobs.append(vm.stack.pop())","(121, 123)",0,F2L.1
+./pycoin.git/pycoin/solve/constraints.py,"for i in range(signature_count):
+    constraints.append(Operator('IS_SIGNATURE', vm.stack[-1]))
+    sig_blobs.append(vm.stack.pop())","(126, 128)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/build_py.py,"for package in self.packages:
+    src_dir = self.get_package_dir(package)
+    build_dir = os.path.join(*[self.build_lib] + package.split('.'))
+    plen = 0
+    if src_dir:
+        plen = len(src_dir) + 1
+    filenames = [file[plen:] for file in self.find_data_files(package, src_dir)]
+    data.append((package, src_dir, build_dir, filenames))","(106, 122)",1,F2L.1
+./pycoin.git/tests/cmds/cmdline_test.py,"for fn in filenames:
+    if fn.endswith('.txt') and fn[0] != '.':
+        paths.append()","(15, 17)",1,F2L.2
+./pycoin.git/tests/sighash_single_test.py,"for k in [k1, k2]:
+    coinbase_tx.txs_out.append(network.tx.TxOut(1000000000, network.script.compile('%s OP_CHECKSIG' % b2h(k.sec()))))","(42, 43)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/bdist_rpm.py,"for readme in ('README', 'README.txt'):
+    if os.path.exists(readme) and readme not in self.doc_files:
+        self.doc_files.append()","(223, 225)",1,F2L.2
+./pycoin.git/tests/build_tx_test.py,"for (coin_value, address) in coins_to:
+    txs_out.append(Tx.TxOut(coin_value, network.contract.for_address(address)))","(25, 26)",1,F2L.1
+./pycoin.git/tests/cmds/cmdline_test.py,"for fn in filenames:
+    if fn.endswith('.txt') and fn[0] != '.':
+        paths.append()","(15, 17)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/bdist_rpm.py,"for rpm in binary_rpms:
+    rpm = os.path.join(rpm_dir['RPMS'], rpm)
+    if os.path.exists(rpm):
+        self.move_file(rpm, self.dist_dir)
+        filename = os.path.join(self.dist_dir, os.path.basename(rpm))
+        self.distribution.dist_files.append()","(383, 390)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/sysconfig.py,"for name in args:
+    vals.append(_config_vars.get(name))","(568, 569)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/msvccompiler.py,"for sym in export_symbols or []:
+    export_opts.append('/EXPORT:' + sym)","(502, 503)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/dist.py,"for help_tuple in options:
+    new_options.append(help_tuple[0:3])","(1259, 1260)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/dist.py,"for cmd in self.cmdclass.keys():
+    if not is_std.get(cmd):
+        extra_commands.append()","(748, 750)",0,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/dist.py,"for cmd in self.cmdclass.keys():
+    if not is_std.get(cmd):
+        extra_commands.append()","(782, 784)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/dep_util.py,"for i in range(len(sources)):
+    if newer(sources[i], targets[i]):
+        n_sources.append()
+        n_targets.append(targets[i])","(48, 51)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/ccompiler.py,"for dir in include_dirs:
+    pp_opts.append('-I%s' % dir)","(1086, 1087)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/ccompiler.py,"for dir in library_dirs:
+    lib_opts.append(compiler.library_dir_option(dir))","(1100, 1101)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/ccompiler.py,"for src_name in source_filenames:
+    (base, ext) = os.path.splitext(src_name)
+    base = os.path.splitdrive(base)[1]
+    base = base[os.path.isabs(base):]
+    if ext not in self.src_extensions:
+        raise UnknownFileError(""unknown file type '%s' (from '%s')"" % (ext, src_name))
+    if strip_dir:
+        base = os.path.basename(base)
+    obj_names.append(os.path.join(output_dir, base + self.obj_extension))","(862, 872)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/msvc9compiler.py,"for i in oldList:
+    if i not in newList:
+        newList.append()","(215, 217)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/msvc9compiler.py,"for p in os.environ['path'].split(';'):
+    self.__paths.append(p)","(397, 398)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/msvc9compiler.py,"for sym in export_symbols or []:
+    export_opts.append('/EXPORT:' + sym)","(614, 615)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/filelist.py,"for name in self.allfiles:
+    if pattern_re.search(name):
+        self.debug_print(' adding ' + name)
+        self.files.append()
+        files_found = True","(221, 225)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/extension.py,"for word in words[1:]:
+    if append_next_word is not None:
+        append_next_word.append()
+        append_next_word = None
+        continue
+    suffix = os.path.splitext(word)[1]
+    switch = word[0:2]
+    value = word[2:]
+    if suffix in ('.c', '.cc', '.cpp', '.cxx', '.c++', '.m', '.mm'):
+        ext.sources.append(word)
+    elif switch == '-I':
+        ext.include_dirs.append(value)
+    elif switch == '-D':
+        equals = value.find('=')
+        if equals == -1:
+            ext.define_macros.append((value, None))
+        else:
+            ext.define_macros.append((value[0:equals], value[equals + 2:]))
+    elif switch == '-U':
+        ext.undef_macros.append(value)
+    elif switch == '-C':
+        ext.extra_compile_args.append(word)
+    elif switch == '-l':
+        ext.libraries.append(value)
+    elif switch == '-L':
+        ext.library_dirs.append(value)
+    elif switch == '-R':
+        ext.runtime_library_dirs.append(value)
+    elif word == '-rpath':
+        append_next_word = ext.runtime_library_dirs
+    elif word == '-Xlinker':
+        append_next_word = ext.extra_link_args
+    elif word == '-Xcompiler':
+        append_next_word = ext.extra_compile_args
+    elif switch == '-u':
+        ext.extra_link_args.append(word)
+        if not value:
+            append_next_word = ext.extra_link_args
+    elif suffix in ('.a', '.so', '.sl', '.o', '.dylib'):
+        ext.extra_objects.append(word)
+    else:
+        file.warn(""unrecognized argument '%s'"" % word)","(188, 238)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/bcppcompiler.py,"for file in objects2:
+    (base, ext) = os.path.splitext(os.path.normcase(file))
+    if ext == '.res':
+        resources.append(file)
+    else:
+        objects.append(file)","(241, 246)",1,F2L.3
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/bcppcompiler.py,"for l in library_dirs:
+    ld_args.append('/L%s' % os.path.normpath(l))","(249, 250)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/fancy_getopt.py,"for (opt, val) in opts:
+    if len(opt) == 2 and opt[0] == '-':
+        opt = self.short2long[opt[1]]
+    else:
+        assert len(opt) > 2 and opt[:2] == '--'
+        opt = opt[2:]
+    alias = self.alias.get(opt)
+    if alias:
+        opt = alias
+    if not self.takes_arg[opt]:
+        assert val == '', ""boolean option can't have value""
+        alias = self.negative_alias.get(opt)
+        if alias:
+            opt = alias
+            val = 0
+        else:
+            val = 1
+    attr = self.attr_name[opt]
+    if val and self.repeat.get(attr) is not None:
+        val = getattr(object, attr, 0) + 1
+    setattr(object, attr, val)
+    self.option_order.append((opt, val))","(241, 267)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/fancy_getopt.py,"for option in self.option_table:
+    (long, short, help) = option[:3]
+    text = wrap_text(help, text_width)
+    if long[-1] == '=':
+        long = long[0:-1]
+    if short is None:
+        if text:
+            lines.append('  --%-*s  %s' % (max_opt, long, text[0]))
+        else:
+            lines.append('  --%-*s  ' % (max_opt, long))
+    else:
+        opt_names = '%s (-%s)' % (long, short)
+        if text:
+            lines.append('  --%-*s  %s' % (max_opt, opt_names, text[0]))
+        else:
+            lines.append('  --%-*s' % opt_names)
+    for l in text[1:]:
+        lines.append(big_indent + l)","(337, 361)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/py36compat.py,"for (pkg, src_dir, build_dir, filenames) in build_py.data_files:
+    for filename in filenames:
+        self.filelist.append(os.path.join(src_dir, filename))","(98, 100)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/py36compat.py,"for filename in filenames:
+    self.filelist.append(os.path.join(src_dir, filename))","(99, 100)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/py36compat.py,"for fn in alts:
+    if self._cs_path_exists(fn):
+        got_it = True
+        self.filelist.append()
+        break","(65, 69)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/build_clib.py,"for (lib_name, build_info) in libraries:
+    sources = build_info.get('sources')
+    if sources is None or not isinstance(sources, (list, tuple)):
+        raise DistutilsSetupError(""in 'libraries' option (library '%s'), 'sources' must be present and must be a list of source filenames"" % lib_name)
+    sources = list(sources)
+    log.info(""building '%s' library"", lib_name)
+    obj_deps = build_info.get('obj_deps', dict())
+    if not isinstance(obj_deps, dict):
+        raise DistutilsSetupError(""in 'libraries' option (library '%s'), 'obj_deps' must be a dictionary of type 'source: list'"" % lib_name)
+    dependencies = []
+    global_deps = obj_deps.get('', list())
+    if not isinstance(global_deps, (list, tuple)):
+        raise DistutilsSetupError(""in 'libraries' option (library '%s'), 'obj_deps' must be a dictionary of type 'source: list'"" % lib_name)
+    for source in sources:
+        src_deps = [source]
+        src_deps.extend(global_deps)
+        extra_deps = obj_deps.get(source, list())
+        if not isinstance(extra_deps, (list, tuple)):
+            raise DistutilsSetupError(""in 'libraries' option (library '%s'), 'obj_deps' must be a dictionary of type 'source: list'"" % lib_name)
+        src_deps.extend(extra_deps)
+        dependencies.append(src_deps)
+    expected_objects = self.compiler.object_filenames(sources, output_dir=self.build_temp)
+    if newer_pairwise_group(dependencies, expected_objects) != ([], []):
+        macros = build_info.get('macros')
+        include_dirs = build_info.get('include_dirs')
+        cflags = build_info.get('cflags')
+        self.compiler.compile(sources, output_dir=self.build_temp, macros=macros, include_dirs=include_dirs, extra_postargs=cflags, debug=self.debug)
+    self.compiler.create_static_lib(expected_objects, lib_name, output_dir=self.build_clib, debug=self.debug)","(28, 105)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for p in cache:
+    np = normalize_path(p)
+    if np.startswith(normalized_path) and np[prefix_len:prefix_len + 1] in (os.sep, ''):
+        result.append()","(1812, 1816)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for (base, dirs, files) in os.walk(path):
+    for filename in files:
+        self.outputs.append(os.path.join(base, filename))","(609, 611)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for key in all_eggs:
+    for dist in all_eggs[key]:
+        eggs.append(self.install_egg(dist.location, setup_base))","(1169, 1171)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for filename in files:
+    self.outputs.append(os.path.join(base, filename))","(610, 611)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for dist in all_eggs[key]:
+    eggs.append(self.install_egg(dist.location, setup_base))","(1170, 1171)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for pth in yield_lines(contents):
+    pth = pth.strip().replace('\\', '/')
+    if not pth.startswith('import'):
+        prefixes.append()","(1551, 1554)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/test.py,"for file in resource_listdir(module.__name__, ''):
+    if file.endswith('.py') and file != '__init__.py':
+        submodule = module.__name__ + '.' + file[:-3]
+    elif resource_exists(module.__name__, file + '/__init__.py'):
+        submodule = module.__name__ + '.' + file
+    else:
+        continue
+    tests.append(self.loadTestsFromName(submodule))","(52, 60)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/build_py.py,"for path in ei_cmd.filelist.files:
+    (d, f) = os.path.split(assert_relative(path))
+    prev = None
+    oldf = f
+    while d and d != prev and (d not in src_dirs):
+        prev = d
+        (d, df) = os.path.split(d)
+        f = os.path.join(df, f)
+    if d in src_dirs:
+        if path.endswith('.py') and f == oldf:
+            continue
+        mf.setdefault(src_dirs[d], []).append()","(127, 138)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/more.py,"for next_item in it:
+    if pred(cur_item, next_item):
+        yield buf
+        if maxsplit == 1:
+            yield ([next_item] + list(it))
+            return
+        buf = []
+        maxsplit -= 1
+    buf.append(next_item)
+    cur_item = next_item","(1312, 1322)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/more.py,"for i in range(1, n + 1):
+    start = stop
+    stop += q + 1 if i <= r else q
+    ret.append(iter(seq[start:stop]))","(1748, 1751)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/more.py,"for item in iterable:
+    key = keyfunc(item)
+    value = valuefunc(item)
+    ret[key].append(value)","(2883, 2886)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/more.py,"for (pool, n) in zip(pools, ns):
+    result.append(pool[index % n])
+    index //= n","(3627, 3629)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/dist.py,"for (section, v) in spec_ext_reqs.items():
+    self._tmp_extras_require[section]
+    for r in pkg_resources.parse_requirements(v):
+        suffix = self._suffix_for(r)
+        self._tmp_extras_require[section + suffix].append(r)","(542, 547)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/dist.py,"for r in complex_reqs:
+    self._tmp_extras_require[':' + str(r.marker)].append(r)","(576, 577)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/dist.py,"for r in pkg_resources.parse_requirements(v):
+    suffix = self._suffix_for(r)
+    self._tmp_extras_require[section + suffix].append(r)","(545, 547)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/dep_util.py,"for i in range(len(sources_groups)):
+    if newer_group(sources_groups[i], targets[i]):
+        n_sources.append()
+        n_targets.append(targets[i])","(24, 27)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/__init__.py,"for (root, dirs, files) in os.walk(where, followlinks=True):
+    all_dirs = dirs[:]
+    dirs[:] = []
+    for dir in all_dirs:
+        full_path = os.path.join(root, dir)
+        rel_path = os.path.relpath(full_path, where)
+        package = rel_path.replace(os.path.sep, '.')
+        if '.' in dir or not cls._looks_like_package(full_path):
+            continue
+        if include(package) and (not exclude(package)):
+            yield package
+        dirs.append(dir)","(80, 100)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/__init__.py,"for dir in all_dirs:
+    full_path = os.path.join(root, dir)
+    rel_path = os.path.relpath(full_path, where)
+    package = rel_path.replace(os.path.sep, '.')
+    if '.' in dir or not cls._looks_like_package(full_path):
+        continue
+    if include(package) and (not exclude(package)):
+        yield package
+    dirs.append(dir)","(85, 100)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pkg_resources/_vendor/pyparsing.py,"for (t, s, e) in self.scanString(instring):
+    out.append(instring[lastE:s])
+    if t:
+        if isinstance(t, ParseResults):
+            out += t.asList()
+        elif isinstance(t, list):
+            out += t
+        else:
+            out.append(t)
+    lastE = e","(1756, 1765)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pkg_resources/_vendor/packaging/version.py,"for part in _parse_version_parts(version.lower()):
+    if part.startswith('*'):
+        if part < '*final':
+            while parts and parts[-1] == '*final-':
+                parts.pop()
+        while parts and parts[-1] == '00000000':
+            parts.pop()
+    parts.append(part)","(221, 232)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/database.py,"for dist in dists:
+    graph.add_distribution(dist)
+    for p in dist.provides:
+        (name, version) = parse_name_and_version(p)
+        logger.debug('Add to provided: %s, %s, %s', name, version, dist)
+        provided.setdefault(name, []).append((version, dist))","(1242, 1248)",1,F2L.5
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.stmts or []):
+    nodelist.append(('stmts[%d]' % i, child))","(299, 300)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.block_items or []):
+    nodelist.append(('block_items[%d]' % i, child))","(340, 341)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.decls or []):
+    nodelist.append(('decls[%d]' % i, child))","(440, 441)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.stmts or []):
+    nodelist.append(('stmts[%d]' % i, child))","(458, 459)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.enumerators or []):
+    nodelist.append(('enumerators[%d]' % i, child))","(561, 562)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.exprs or []):
+    nodelist.append(('exprs[%d]' % i, child))","(579, 580)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.ext or []):
+    nodelist.append(('ext[%d]' % i, child))","(597, 598)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.param_decls or []):
+    nodelist.append(('param_decls[%d]' % i, child))","(690, 691)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.exprs or []):
+    nodelist.append(('exprs[%d]' % i, child))","(785, 786)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.name or []):
+    nodelist.append(('name[%d]' % i, child))","(823, 824)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.params or []):
+    nodelist.append(('params[%d]' % i, child))","(843, 844)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.decls or []):
+    nodelist.append(('decls[%d]' % i, child))","(918, 919)",1,F2L.1
+./pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.decls or []):
+    nodelist.append(('decls[%d]' % i, child))","(1083, 1084)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for n in namelist:
+    if n and n[0]:
+        result.append((fdict[n[0]], n[1]))
+    else:
+        result.append(n)","(483, 487)",1,F2L.3
+./pycparser.git/pycparser/ply/lex.py,"for state in stateinfo:
+    regex_list = []
+    for (fname, f) in linfo.funcsym[state]:
+        line = f.__code__.co_firstlineno
+        file = f.__code__.co_filename
+        regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)
+    for (name, r) in linfo.strsym[state]:
+        regex_list.append('(?P<%s>%s)' % (name, r))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)
+    regexs[state] = regex_list","(951, 968)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in lextab._lexstatere.items():
+    titem = []
+    txtitem = []
+    for (pat, func_name) in lre:
+        titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))
+    self.lexstatere[statename] = titem
+    self.lexstateretext[statename] = txtitem","(233, 240)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (fname, f) in linfo.funcsym[state]:
+    line = f.__code__.co_firstlineno
+    file = f.__code__.co_filename
+    regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)","(955, 960)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for (name, r) in linfo.strsym[state]:
+    regex_list.append('(?P<%s>%s)' % (name, r))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)","(963, 966)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in self.lexstatere.items():
+    titem = []
+    for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+        titem.append((retext, _funcs_to_names(func, renames)))
+    tabre[statename] = titem","(193, 197)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (pat, func_name) in lre:
+    titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))","(236, 237)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+    titem.append((retext, _funcs_to_names(func, renames)))","(195, 196)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for termname in self.Precedence:
+    if not (termname in self.Terminals or termname in self.UsedPrecedence):
+        unused.append()","(1791, 1793)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for p in parsetab._lr_productions:
+    self.lr_productions.append(MiniProduction(*p))","(1996, 1997)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for p in productions:
+    self.lr_productions.append(MiniProduction(*p))","(2023, 2024)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for (name, item) in self.pdict.items():
+    if not name.startswith('p_') or name == 'p_error':
+        continue
+    if isinstance(item, (types.FunctionType, types.MethodType)):
+        line = getattr(item, 'co_firstlineno', item.__code__.co_firstlineno)
+        module = inspect.getmodule(item)
+        p_functions.append()","(3133, 3139)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for s in p.prod:
+    if s not in self.Prodnames and s not in self.Terminals and (s != 'error'):
+        result.append()","(1746, 1748)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for j in J:
+    for x in j.lr_after:
+        if getattr(x, 'lr0_added', 0) == self._add_count:
+            continue
+        J.append(x.lr_next)
+        x.lr0_added = self._add_count
+        didadd = True","(2149, 2156)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for x in asyms:
+    g = self.lr0_goto(I, x)
+    if not g or id(g) in self.lr0_cidhash:
+        continue
+    self.lr0_cidhash[id(g)] = len(C)
+    C.append(g)","(2221, 2226)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for i in includes:
+    if i not in includedict:
+        includedict[i] = []
+    includedict[i].append((state, N))","(2435, 2438)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for p in self.lr_productions:
+    if p.func:
+        outp.append((p.str, p.name, p.len, p.func, os.path.basename(p.file), p.line))
+    else:
+        outp.append((str(p), p.name, p.len, None, None, None))","(2865, 2869)",1,F2L.3
+./pycparser.git/pycparser/ply/yacc.py,"for f in self.pfuncs:
+    if f[3]:
+        parts.append()","(2983, 2985)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for (level, p) in enumerate(self.prec):
+    if not isinstance(p, (list, tuple)):
+        self.log.error('Bad precedence table')
+        self.error = True
+        return
+    if len(p) < 2:
+        self.log.error('Malformed precedence entry %s. Must be (assoc, term, ..., term)', p)
+        self.error = True
+        return
+    assoc = p[0]
+    if not isinstance(assoc, string_types):
+        self.log.error('precedence associativity must be a string')
+        self.error = True
+        return
+    for term in p[1:]:
+        if not isinstance(term, string_types):
+            self.log.error('precedence items must be strings')
+            self.error = True
+            return
+        preclist.append((term, assoc, level + 1))","(3107, 3127)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for x in j.lr_after:
+    if getattr(x, 'lr0_added', 0) == self._add_count:
+        continue
+    J.append(x.lr_next)
+    x.lr0_added = self._add_count
+    didadd = True","(2150, 2156)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_action.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(2756, 2763)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_goto.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(2796, 2803)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for term in p[1:]:
+    if not isinstance(term, string_types):
+        self.log.error('precedence items must be strings')
+        self.error = True
+        return
+    preclist.append((term, assoc, level + 1))","(3122, 3127)",1,F2L.1
+./pexpect.git/tests/test_expect.py,"for i in range(0, len(src), length):
+    s = src[i:i + length]
+    hexa = ' '.join(['%02X' % ord(x) for x in s])
+    printable = s.translate(FILTER)
+    result.append('%04X   %-*s   %s\n' % (i, length * 3, hexa, printable))","(45, 49)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for f in self._first(p.prod):
+    if f not in self.First[n]:
+        self.First[n].append()
+        some_change = True","(1861, 1864)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for f in fst:
+    if f != '<empty>' and f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True
+    if f == '<empty>':
+        hasempty = True","(1904, 1909)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for f in self.Follow[p.name]:
+    if f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True","(1912, 1915)",1,F2L.2
+./pycparser.git/pycparser/c_generator.py,"for expr in n.exprs:
+    visited_subexprs.append(self._visit_expr(expr))","(174, 175)",1,F2L.1
+./pycparser.git/pycparser/c_generator.py,"for expr in n.exprs:
+    visited_subexprs.append(self._visit_expr(expr))","(180, 181)",1,F2L.1
+./pexpect.git/pexpect/_async.py,"for line in cmdlines[1:]:
+    yield from repl._expect_prompt(timeout=timeout, async_=True)
+    res.append(repl.child.before)
+    repl.child.sendline(line)","(38, 41)",0,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for n in namelist:
+    if n and n[0]:
+        result.append((fdict[n[0]], n[1]))
+    else:
+        result.append(n)","(308, 312)",1,F2L.3
+./pycparser.git/pycparser/ply/lex.py,"for state in stateinfo:
+    regex_list = []
+    for (fname, f) in linfo.funcsym[state]:
+        line = f.__code__.co_firstlineno
+        file = f.__code__.co_filename
+        regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)
+    for (name, r) in linfo.strsym[state]:
+        regex_list.append('(?P<%s>%s)' % (name, r))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)
+    regexs[state] = regex_list","(662, 674)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in lextab._lexstatere.items():
+    titem = []
+    txtitem = []
+    for (pat, func_name) in lre:
+        titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))
+    self.lexstatere[statename] = titem
+    self.lexstateretext[statename] = txtitem","(151, 157)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (fname, f) in linfo.funcsym[state]:
+    line = f.__code__.co_firstlineno
+    file = f.__code__.co_filename
+    regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)","(664, 669)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for (name, r) in linfo.strsym[state]:
+    regex_list.append('(?P<%s>%s)' % (name, r))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)","(670, 673)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in self.lexstatere.items():
+    titem = []
+    for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+        titem.append((retext, _funcs_to_names(func, renames)))
+    tabre[statename] = titem","(119, 123)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (pat, func_name) in lre:
+    titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))","(154, 155)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+    titem.append((retext, _funcs_to_names(func, renames)))","(121, 122)",1,F2L.1
+./sslyze.git/tests/scanner_tests/test_mass_scanner.py,"for _ in range(20):
+    scan_request = ServerScanRequestFactory.create(scan_commands=scan_commands_to_run)
+    connectivity_result = ServerTlsProbingResultFactory.create()
+    all_server_scan_requests_and_connectivity_results.append((scan_request, connectivity_result))","(52, 55)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for termname in self.Precedence:
+    if not (termname in self.Terminals or termname in self.UsedPrecedence):
+        unused.append()","(1029, 1031)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for p in parsetab._lr_productions:
+    self.lr_productions.append(MiniProduction(*p))","(1151, 1152)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for p in productions:
+    self.lr_productions.append(MiniProduction(*p))","(1173, 1174)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for (name, item) in self.pdict.items():
+    if not name.startswith('p_') or name == 'p_error':
+        continue
+    if isinstance(item, (types.FunctionType, types.MethodType)):
+        line = getattr(item, 'co_firstlineno', item.__code__.co_firstlineno)
+        module = inspect.getmodule(item)
+        p_functions.append()","(1866, 1872)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for s in p.prod:
+    if s not in self.Prodnames and s not in self.Terminals and (s != 'error'):
+        result.append()","(1007, 1009)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for j in J:
+    for x in j.lr_after:
+        if getattr(x, 'lr0_added', 0) == self._add_count:
+            continue
+        J.append(x.lr_next)
+        x.lr0_added = self._add_count
+        didadd = True","(1250, 1256)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for x in asyms:
+    g = self.lr0_goto(I, x)
+    if not g or id(g) in self.lr0_cidhash:
+        continue
+    self.lr0_cidhash[id(g)] = len(C)
+    C.append(g)","(1301, 1306)",1,F2L.1
+./pexpect.git/pexpect/replwrap.py,"for line in cmdlines[1:]:
+    self._expect_prompt(timeout=timeout)
+    res.append(self.child.before)
+    self.child.sendline(line)","(101, 104)",0,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for i in includes:
+    if i not in includedict:
+        includedict[i] = []
+    includedict[i].append((state, N))","(1406, 1409)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for p in self.lr_productions:
+    if p.func:
+        outp.append((p.str, p.name, p.len, p.func, os.path.basename(p.file), p.line))
+    else:
+        outp.append((str(p), p.name, p.len, None, None, None))","(1664, 1668)",1,F2L.3
+./pycparser.git/pycparser/ply/yacc.py,"for f in self.pfuncs:
+    if f[3]:
+        parts.append()","(1748, 1750)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for (level, p) in enumerate(self.prec):
+    if not isinstance(p, (list, tuple)):
+        self.log.error('Bad precedence table')
+        self.error = True
+        return
+    if len(p) < 2:
+        self.log.error('Malformed precedence entry %s. Must be (assoc, term, ..., term)', p)
+        self.error = True
+        return
+    assoc = p[0]
+    if not isinstance(assoc, string_types):
+        self.log.error('precedence associativity must be a string')
+        self.error = True
+        return
+    for term in p[1:]:
+        if not isinstance(term, string_types):
+            self.log.error('precedence items must be strings')
+            self.error = True
+            return
+        preclist.append((term, assoc, level + 1))","(1842, 1861)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for x in j.lr_after:
+    if getattr(x, 'lr0_added', 0) == self._add_count:
+        continue
+    J.append(x.lr_next)
+    x.lr0_added = self._add_count
+    didadd = True","(1251, 1256)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_action.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(1591, 1598)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_goto.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(1617, 1624)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for term in p[1:]:
+    if not isinstance(term, string_types):
+        self.log.error('precedence items must be strings')
+        self.error = True
+        return
+    preclist.append((term, assoc, level + 1))","(1856, 1861)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for f in self._first(p.prod):
+    if f not in self.First[n]:
+        self.First[n].append()
+        some_change = True","(1063, 1066)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for f in fst:
+    if f != '<empty>' and f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True
+    if f == '<empty>':
+        hasempty = True","(1088, 1093)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for f in self.Follow[p.name]:
+    if f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True","(1095, 1098)",1,F2L.2
+./pycparser.git/pycparser/ply/lex.py,"for n in namelist:
+    if n and n[0]:
+        result.append((fdict[n[0]], n[1]))
+    else:
+        result.append(n)","(308, 312)",1,F2L.3
+./pycparser.git/pycparser/ply/lex.py,"for state in stateinfo:
+    regex_list = []
+    for (fname, f) in linfo.funcsym[state]:
+        line = f.__code__.co_firstlineno
+        file = f.__code__.co_filename
+        regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)
+    for (name, r) in linfo.strsym[state]:
+        regex_list.append('(?P<%s>%s)' % (name, r))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)
+    regexs[state] = regex_list","(662, 674)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in lextab._lexstatere.items():
+    titem = []
+    txtitem = []
+    for (pat, func_name) in lre:
+        titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))
+    self.lexstatere[statename] = titem
+    self.lexstateretext[statename] = txtitem","(151, 157)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (fname, f) in linfo.funcsym[state]:
+    line = f.__code__.co_firstlineno
+    file = f.__code__.co_filename
+    regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)","(664, 669)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for (name, r) in linfo.strsym[state]:
+    regex_list.append('(?P<%s>%s)' % (name, r))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)","(670, 673)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in self.lexstatere.items():
+    titem = []
+    for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+        titem.append((retext, _funcs_to_names(func, renames)))
+    tabre[statename] = titem","(119, 123)",1,F2L.5
+./pycparser.git/pycparser/ply/lex.py,"for (pat, func_name) in lre:
+    titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))","(154, 155)",1,F2L.1
+./pycparser.git/pycparser/ply/lex.py,"for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+    titem.append((retext, _funcs_to_names(func, renames)))","(121, 122)",1,F2L.1
+./pexpect.git/pexpect/expect.py,"for (n, s) in enumerate(strings):
+    if s is EOF:
+        self.eof_index = n
+        continue
+    if s is TIMEOUT:
+        self.timeout_index = n
+        continue
+    self._strings.append((n, s))
+    if len(s) > self.longest_string:
+        self.longest_string = len(s)","(218, 227)",0,F2L.1
+./sslyze.git/tests/scanner_tests/test_scanner.py,"for result in scanner.get_results():
+    all_scan_results.append(result)","(70, 71)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for termname in self.Precedence:
+    if not (termname in self.Terminals or termname in self.UsedPrecedence):
+        unused.append()","(1029, 1031)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for p in parsetab._lr_productions:
+    self.lr_productions.append(MiniProduction(*p))","(1151, 1152)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for p in productions:
+    self.lr_productions.append(MiniProduction(*p))","(1173, 1174)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for (name, item) in self.pdict.items():
+    if not name.startswith('p_') or name == 'p_error':
+        continue
+    if isinstance(item, (types.FunctionType, types.MethodType)):
+        line = getattr(item, 'co_firstlineno', item.__code__.co_firstlineno)
+        module = inspect.getmodule(item)
+        p_functions.append()","(1866, 1872)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for s in p.prod:
+    if s not in self.Prodnames and s not in self.Terminals and (s != 'error'):
+        result.append()","(1007, 1009)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for j in J:
+    for x in j.lr_after:
+        if getattr(x, 'lr0_added', 0) == self._add_count:
+            continue
+        J.append(x.lr_next)
+        x.lr0_added = self._add_count
+        didadd = True","(1250, 1256)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for x in asyms:
+    g = self.lr0_goto(I, x)
+    if not g or id(g) in self.lr0_cidhash:
+        continue
+    self.lr0_cidhash[id(g)] = len(C)
+    C.append(g)","(1301, 1306)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for i in includes:
+    if i not in includedict:
+        includedict[i] = []
+    includedict[i].append((state, N))","(1406, 1409)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for p in self.lr_productions:
+    if p.func:
+        outp.append((p.str, p.name, p.len, p.func, os.path.basename(p.file), p.line))
+    else:
+        outp.append((str(p), p.name, p.len, None, None, None))","(1664, 1668)",1,F2L.3
+./pycparser.git/pycparser/ply/yacc.py,"for f in self.pfuncs:
+    if f[3]:
+        parts.append()","(1748, 1750)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for (level, p) in enumerate(self.prec):
+    if not isinstance(p, (list, tuple)):
+        self.log.error('Bad precedence table')
+        self.error = True
+        return
+    if len(p) < 2:
+        self.log.error('Malformed precedence entry %s. Must be (assoc, term, ..., term)', p)
+        self.error = True
+        return
+    assoc = p[0]
+    if not isinstance(assoc, string_types):
+        self.log.error('precedence associativity must be a string')
+        self.error = True
+        return
+    for term in p[1:]:
+        if not isinstance(term, string_types):
+            self.log.error('precedence items must be strings')
+            self.error = True
+            return
+        preclist.append((term, assoc, level + 1))","(1842, 1861)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for x in j.lr_after:
+    if getattr(x, 'lr0_added', 0) == self._add_count:
+        continue
+    J.append(x.lr_next)
+    x.lr0_added = self._add_count
+    didadd = True","(1251, 1256)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_action.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(1591, 1598)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_goto.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(1617, 1624)",1,F2L.5
+./pycparser.git/pycparser/ply/yacc.py,"for term in p[1:]:
+    if not isinstance(term, string_types):
+        self.log.error('precedence items must be strings')
+        self.error = True
+        return
+    preclist.append((term, assoc, level + 1))","(1856, 1861)",1,F2L.1
+./pexpect.git/pexpect/expect.py,"for (n, s) in enumerate(patterns):
+    if s is EOF:
+        self.eof_index = n
+        continue
+    if s is TIMEOUT:
+        self.timeout_index = n
+        continue
+    self._searches.append((n, s))","(316, 323)",1,F2L.1
+./pycparser.git/pycparser/ply/yacc.py,"for f in self._first(p.prod):
+    if f not in self.First[n]:
+        self.First[n].append()
+        some_change = True","(1063, 1066)",1,F2L.2
+./pycparser.git/pycparser/ply/yacc.py,"for f in fst:
+    if f != '<empty>' and f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True
+    if f == '<empty>':
+        hasempty = True","(1088, 1093)",1,F2L.2
+./sslyze.git/tests/scanner_tests/test_scanner.py,"for result in scanner.get_results():
+    all_scan_results.append(result)","(103, 104)",1,F2L.1
+./pexpect.git/pexpect/expect.py,"for (n, s) in self._searches:
+    ss.append((n, '    %d: re.compile(%r)' % (n, s.pattern)))","(332, 333)",1,F2L.1
+./pexpect.git/examples/hive.py,"for host_connect_string in args:
+    hcd = parse_host_connect_string(host_connect_string)
+    hostname = hcd['hostname']
+    port = hcd['port']
+    if port == '':
+        port = None
+    if len(hcd['username']) > 0:
+        username = hcd['username']
+    elif cli_username is not None:
+        username = cli_username
+    else:
+        username = raw_input('%s username: ' % hostname)
+    if len(hcd['password']) > 0:
+        password = hcd['password']
+    elif cli_password is not None:
+        password = cli_password
+    else:
+        password = getpass.getpass('%s password: ' % hostname)
+    host_names.append(hostname)
+    hive_connect_info[hostname] = (hostname, username, password, port)","(199, 218)",1,F2L.1
+./sslyze.git/tests/scanner_tests/test_scanner.py,"for result in scanner.get_results():
+    all_results.append(result)","(138, 139)",0,F2L.1
+./pexpect.git/pexpect/_async.py,"for line in cmdlines[1:]:
+    yield from repl._expect_prompt(timeout=timeout, async_=True)
+    res.append(repl.child.before)
+    repl.child.sendline(line)","(34, 37)",0,F2L.1
+./sslyze.git/setup.py,"for file in listdir(trust_stores_pem_path):
+    file = path.join(trust_stores_pem_path, file)
+    if path.isfile(file):
+        filename = path.basename(file)
+        non_python_files.append()","(47, 51)",1,F2L.2
+./pexpect.git/pexpect/replwrap.py,"for line in cmdlines[1:]:
+    self._expect_prompt(timeout=timeout)
+    res.append(self.child.before)
+    self.child.sendline(line)","(83, 86)",0,F2L.1
+./pexpect.git/pexpect/expect.py,"for (n, s) in enumerate(strings):
+    if s is EOF:
+        self.eof_index = n
+        continue
+    if s is TIMEOUT:
+        self.timeout_index = n
+        continue
+    self._strings.append((n, s))
+    if len(s) > self.longest_string:
+        self.longest_string = len(s)","(194, 203)",0,F2L.1
+./sslyze.git/sslyze/__main__.py,"for result in sslyze_scanner.get_results():
+    all_server_scan_results.append(result)","(67, 69)",0,F2L.1
+./pexpect.git/pexpect/expect.py,"for (n, s) in enumerate(patterns):
+    if s is EOF:
+        self.eof_index = n
+        continue
+    if s is TIMEOUT:
+        self.timeout_index = n
+        continue
+    self._searches.append((n, s))","(271, 278)",1,F2L.1
+./sslyze.git/sslyze/scanner/_mass_scanner.py,"for completed_job in completed_scan.completed_scan_jobs:
+    scan_cmd_to_completed_jobs[completed_job.for_scan_command].append(completed_job)","(257, 258)",1,F2L.1
+./pexpect.git/pexpect/expect.py,"for (n, s) in self._searches:
+    ss.append((n, '    %d: re.compile(%r)' % (n, s.pattern)))","(284, 285)",1,F2L.1
+./sslyze.git/sslyze/scanner/_mass_scanner.py,"for ongoing_server_scan in all_ongoing_server_scans.values():
+    if ongoing_server_scan.is_completed:
+        all_completed_server_scans.append()","(128, 130)",0,F2L.2
+./sslyze.git/sslyze/cli/command_line_parser.py,"for target in args_command_list.target:
+    args_target_list.append(target)","(139, 140)",0,F2L.1
+./sslyze.git/sslyze/plugins/openssl_cipher_suites/_cli_connector.py,"for accepted_cipher in result.accepted_cipher_suites:
+    result_as_txt.append(_format_accepted_cipher_suite(accepted_cipher))","(43, 44)",1,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cert_chain_analyzer.py,"for certificate in self.verified_certificate_chain:
+    pem_certs.append(certificate.public_bytes(Encoding.PEM).decode('ascii'))","(126, 127)",1,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cert_chain_analyzer.py,"for certificate in self.received_certificate_chain:
+    pem_certs.append(certificate.public_bytes(Encoding.PEM).decode('ascii'))","(133, 134)",1,F2L.1
+elasticsearch-dsl-py.git/elasticsearch_dsl/query.py,"for q in chain(self.must, self.filter):
+    negations.append(~q)","(193, 194)",1,F2L.1
+elasticsearch-dsl-py.git/elasticsearch_dsl/faceted_search.py,"for bucket in data.buckets:
+    key = self.get_value(bucket)
+    out.append((key, self.get_metric(bucket), self.is_filtered(key, filter_values)))","(112, 116)",1,F2L.1
+elasticsearch-dsl-py.git/elasticsearch_dsl/search.py,"for s in self._searches:
+    meta = {}
+    if s._index:
+        meta['index'] = s._index
+    meta.update(s._params)
+    out.append(meta)
+    out.append(s.to_dict())","(785, 792)",1,F2L.1
+elasticsearch-dsl-py.git/elasticsearch_dsl/search.py,"for s in self._searches:
+    meta = {}
+    if s._index:
+        meta['index'] = s._index
+    meta.update(s._params)
+    out.append(meta)
+    out.append(s.to_dict())","(686, 692)",1,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cert_chain_analyzer.py,"for trust_store in self.trust_stores_for_validation:
+    path_validation_result = _verify_certificate_chain(self.server_certificate_chain_as_pem, trust_store)
+    all_path_validation_results.append(path_validation_result)","(227, 229)",0,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cli_connector.py,"for (index, cert_deployment) in enumerate(result.certificate_deployments):
+    result_as_txt.append('\n')
+    result_as_txt.extend(cls._cert_deployment_to_console_output(index, cert_deployment))","(84, 86)",0,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    connectors.append({'id': c['id'], 'config': c['config'], 'service_status': c['service'].running})","(122, 123)",1,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cli_connector.py,"for path_result in cert_deployment.path_validation_results:
+    if path_result.was_validation_successful:
+        ev_txt = ''
+        if cert_deployment.leaf_certificate_is_ev and path_result.trust_store.ev_oids:
+            ev_txt = ', Extended Validation'
+        path_txt = f'OK - Certificate is trusted{ev_txt}'
+    else:
+        path_txt = f'FAILED - Certificate is NOT Trusted: {path_result.openssl_error_string}'
+    deployment_as_txt.append(cls._format_field(cls.TRUST_FORMAT.format(store_name=path_result.trust_store.name, store_version=path_result.trust_store.version), path_txt))","(113, 131)",0,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_hex_content'] = True
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(48, 52)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(65, 68)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for user in users:
+    row = []
+    row.append('#%s' % user.uid)
+    row.append(user.getCnxStatus().smpps['bound_connections_count']['bind_receiver'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transmitter'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transceiver'])
+    row.append(formatDateTime(user.getCnxStatus().smpps['last_activity_at']))
+    row.append(user.getCnxStatus().httpapi['connects_count'])
+    row.append(formatDateTime(user.getCnxStatus().httpapi['last_activity_at']))
+    table.append(row)","(57, 64)",1,F2L.1
+./sslyze.git/tests/scanner_tests/test_scanner.py,"for result in scanner.get_results():
+    all_results.append(result)","(76, 77)",0,F2L.1
+./sslyze.git/tests/scanner_tests/test_scanner.py,"for result in scanner.get_results():
+    all_results.append(result)","(76, 77)",0,F2L.1
+./jasmin.git/tests/protocols/cli/test_mxrouterm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(46, 49)",1,F2L.1
+./sslyze.git/sslyze/__main__.py,"for result in sslyze_scanner.get_results():
+    all_server_scan_results.append(result)","(35, 36)",0,F2L.1
+./jasmin.git/tests/protocols/cli/test_morouterm.py,"for item in results[:]:
+    filters.append('%sRoute_http' % item)
+    filters.append('%sRoute_smpps' % item)","(150, 152)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/install.py,"for filename in cmd.get_outputs():
+    if filename not in outputs:
+        outputs.append()","(293, 295)",1,F2L.2
+./sslyze.git/sslyze/scanner/_mass_scanner.py,"for completed_job in completed_scan.completed_scan_jobs:
+    scan_cmd_to_completed_jobs[completed_job.for_scan_command].append(completed_job)","(142, 143)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/build_ext.py,"for ext in self.extensions:
+    outputs.append(self.get_ext_fullpath(ext.name))","(222, 223)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/build_ext.py,"for undef in ext.undef_macros:
+    macros.append((undef,))","(279, 280)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/build_ext.py,"for source in sources:
+    (base, ext) = os.path.splitext(source)
+    if ext == '.i':
+        new_sources.append(base + '_wrap' + .c)
+        swig_sources.append(source)
+        swig_targets[source] = new_sources[-1]
+    else:
+        new_sources.append(source)","(304, 311)",0,F2L.3
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/command/build_ext.py,"for o in extension.swig_opts:
+    swig_cmd.append(o)","(320, 321)",1,F2L.1
+./sslyze.git/sslyze/scanner/_mass_scanner.py,"for ongoing_server_scan in all_ongoing_server_scans.values():
+    if ongoing_server_scan.is_completed:
+        all_completed_server_scans.append()","(82, 84)",0,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/msvccompiler.py,"for sym in export_symbols or []:
+    export_opts.append('/EXPORT:' + sym)","(350, 351)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/dist.py,"for cmd in self.cmdclass.keys():
+    if not is_std.get(cmd):
+        extra_commands.append()","(444, 446)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/ccompiler.py,"for compiler in compiler_class.keys():
+    compilers.append(('compiler=' + compiler, None, compiler_class[compiler][2]))","(680, 681)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/ccompiler.py,"for dir in include_dirs:
+    pp_opts.append('-I%s' % dir)","(740, 741)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/ccompiler.py,"for dir in library_dirs:
+    lib_opts.append(compiler.library_dir_option(dir))","(752, 753)",1,F2L.1
+./sslyze.git/sslyze/cli/command_line_parser.py,"for target in args_command_list.target:
+    args_target_list.append(target)","(78, 79)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/ccompiler.py,"for src_name in source_filenames:
+    (base, ext) = os.path.splitext(src_name)
+    base = os.path.splitdrive(base)[1]
+    base = base[os.path.isabs(base):]
+    if ext not in self.src_extensions:
+        raise UnknownFileError(""unknown file type '%s' (from '%s')"" % (ext, src_name))
+    if strip_dir:
+        base = os.path.basename(base)
+    obj_names.append(os.path.join(output_dir, base + self.obj_extension))","(595, 603)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/msvc9compiler.py,"for i in oldList:
+    if i not in newList:
+        newList.append()","(172, 174)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/msvc9compiler.py,"for p in os.environ['path'].split(';'):
+    self.__paths.append(p)","(302, 303)",1,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cert_chain_analyzer.py,"for trust_store in self.trust_stores_for_validation:
+    path_validation_result = _verify_certificate_chain(self.server_certificate_chain_as_pem, trust_store)
+    all_path_validation_results.append(path_validation_result)","(184, 186)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/filelist.py,"for sort_tuple in sortable_files:
+    self.files.append(os.path.join(*sort_tuple))","(56, 57)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/filelist.py,"for name in self.allfiles:
+    if pattern_re.search(name):
+        self.debug_print(' adding ' + name)
+        self.files.append()
+        files_found = True","(159, 163)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_distutils/bcppcompiler.py,"for l in library_dirs:
+    ld_args.append('/L%s' % os.path.normpath(l))","(133, 134)",0,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cli_connector.py,"for (index, cert_deployment) in enumerate(result.certificate_deployments):
+    result_as_txt.append('\n')
+    result_as_txt.extend(cls._cert_deployment_to_console_output(index, cert_deployment))","(54, 56)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for (base, dirs, files) in os.walk(path):
+    for filename in files:
+        self.outputs.append(os.path.join(base, filename))","(384, 386)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for key in all_eggs:
+    for dist in all_eggs[key]:
+        eggs.append(self.install_egg(dist.location, setup_base))","(777, 779)",0,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for filename in files:
+    self.outputs.append(os.path.join(base, filename))","(385, 386)",1,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cli_connector.py,"for path_result in cert_deployment.path_validation_results:
+    if path_result.was_validation_successful:
+        ev_txt = ''
+        if cert_deployment.leaf_certificate_is_ev and path_result.trust_store.ev_oids:
+            ev_txt = ', Extended Validation'
+        path_txt = f'OK - Certificate is trusted{ev_txt}'
+    else:
+        path_txt = f'FAILED - Certificate is NOT Trusted: {path_result.openssl_error_string}'
+    deployment_as_txt.append(cls._format_field(cls.TRUST_FORMAT.format(store_name=path_result.trust_store.name, store_version=path_result.trust_store.version), path_txt))","(68, 76)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for dist in all_eggs[key]:
+    eggs.append(self.install_egg(dist.location, setup_base))","(778, 779)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/easy_install.py,"for pth in yield_lines(contents):
+    pth = pth.strip().replace('\\', '/')
+    if not pth.startswith('import'):
+        prefixes.append()","(1021, 1024)",1,F2L.2
+./sslyze.git/sslyze/scanner/_mass_scanner.py,"for completed_job in completed_scan.completed_scan_jobs:
+    scan_cmd_to_completed_jobs[completed_job.for_scan_command].append(completed_job)","(142, 143)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/command/build_py.py,"for path in ei_cmd.filelist.files:
+    (d, f) = os.path.split(assert_relative(path))
+    prev = None
+    oldf = f
+    while d and d != prev and (d not in src_dirs):
+        prev = d
+        (d, df) = os.path.split(d)
+        f = os.path.join(df, f)
+    if d in src_dirs:
+        if path.endswith('.py') and f == oldf:
+            continue
+        mf.setdefault(src_dirs[d], []).append()","(102, 113)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/more.py,"for next_item in it:
+    if pred(cur_item, next_item):
+        yield buf
+        if maxsplit == 1:
+            yield ([next_item] + list(it))
+            return
+        buf = []
+        maxsplit -= 1
+    buf.append(next_item)
+    cur_item = next_item","(1082, 1091)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/more.py,"for i in range(1, n + 1):
+    start = stop
+    stop += q + 1 if i <= r else q
+    ret.append(iter(seq[start:stop]))","(1450, 1453)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/more.py,"for item in iterable:
+    key = keyfunc(item)
+    value = valuefunc(item)
+    ret[key].append(value)","(2481, 2484)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/more.py,"for (pool, n) in zip(pools, ns):
+    result.append(pool[index % n])
+    index //= n","(3122, 3124)",0,F2L.1
+./sslyze.git/sslyze/scanner/_mass_scanner.py,"for ongoing_server_scan in all_ongoing_server_scans.values():
+    if ongoing_server_scan.is_completed:
+        all_completed_server_scans.append()","(82, 84)",0,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/more_itertools/recipes.py,"for x in chain(signal, repeat(0, n - 1)):
+    window.append(x)
+    yield sum(map(operator.mul, kernel, window))","(523, 525)",1,F2L.1
+./sslyze.git/sslyze/cli/command_line_parser.py,"for target in args_command_list.target:
+    args_target_list.append(target)","(78, 79)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/pyparsing.py,"for (t, s, e) in self.scanString(instring):
+    out.append(instring[lastE:s])
+    if t:
+        if isinstance(t, ParseResults):
+            out += t.asList()
+        elif isinstance(t, list):
+            out += t
+        else:
+            out.append(t)
+    lastE = e","(1520, 1529)",1,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cert_chain_analyzer.py,"for trust_store in self.trust_stores_for_validation:
+    path_validation_result = _verify_certificate_chain(self.server_certificate_chain_as_pem, trust_store)
+    all_path_validation_results.append(path_validation_result)","(184, 186)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/setuptools/_vendor/packaging/version.py,"for part in _parse_version_parts(version.lower()):
+    if part.startswith('*'):
+        if part < '*final':
+            while parts and parts[-1] == '*final-':
+                parts.pop()
+        while parts and parts[-1] == '00000000':
+            parts.pop()
+    parts.append(part)","(141, 148)",1,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cli_connector.py,"for path_result in cert_deployment.path_validation_results:
+    if path_result.was_validation_successful:
+        ev_txt = ''
+        if cert_deployment.leaf_certificate_is_ev and path_result.trust_store.ev_oids:
+            ev_txt = ', Extended Validation'
+        path_txt = f'OK - Certificate is trusted{ev_txt}'
+    else:
+        path_txt = f'FAILED - Certificate is NOT Trusted: {path_result.openssl_error_string}'
+    deployment_as_txt.append(cls._format_field(cls.TRUST_FORMAT.format(store_name=path_result.trust_store.name, store_version=path_result.trust_store.version), path_txt))","(66, 74)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pkg_resources/_vendor/pyparsing.py,"for (t, s, e) in self.scanString(instring):
+    out.append(instring[lastE:s])
+    if t:
+        if isinstance(t, ParseResults):
+            out += t.asList()
+        elif isinstance(t, list):
+            out += t
+        else:
+            out.append(t)
+    lastE = e","(1520, 1529)",0,F2L.1
+./sslyze.git/sslyze/plugins/certificate_info/_cert_chain_analyzer.py,"for trust_store in self.trust_stores_for_validation:
+    path_validation_result = _verify_certificate_chain(self.server_certificate_chain_as_pem, trust_store)
+    all_path_validation_results.append(path_validation_result)","(184, 186)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/util.py,"for succ in self._preds:
+    preds = self._preds[succ]
+    for pred in preds:
+        result.append('  %s -> %s;' % (pred, succ))","(1189, 1192)",0,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/util.py,"for node in self._nodes:
+    result.append('  %s;' % node)","(1193, 1194)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/util.py,"for pred in preds:
+    result.append('  %s -> %s;' % (pred, succ))","(1191, 1192)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for minor in range(sys.version_info[1] - 1, -1, -1):
+    versions.append(''.join([major, str(minor)]))","(971, 972)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for (suffix, _, _) in imp.get_suffixes():
+    if suffix.startswith('.abi'):
+        abis.append()","(975, 977)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for abi in abis:
+    for arch in arches:
+        result.append((''.join((IMP_PREFIX, versions[0])), abi, arch))
+        if abi != 'none' and sys.platform.startswith('linux'):
+            arch = arch.replace('linux_', '')
+            parts = _get_glibc_version()
+            if len(parts) == 2:
+                if parts >= (2, 5):
+                    result.append((''.join((IMP_PREFIX, versions[0])), abi, 'manylinux1_%s' % arch))
+                if parts >= (2, 12):
+                    result.append((''.join((IMP_PREFIX, versions[0])), abi, 'manylinux2010_%s' % arch))
+                if parts >= (2, 17):
+                    result.append((''.join((IMP_PREFIX, versions[0])), abi, 'manylinux2014_%s' % arch))
+                result.append((''.join((IMP_PREFIX, versions[0])), abi, 'manylinux_%s_%s_%s' % (parts[0], parts[1], arch)))","(1009, 1028)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for (i, version) in enumerate(versions):
+    result.append((''.join((IMP_PREFIX, version)), 'none', 'any'))
+    if i == 0:
+        result.append()","(1031, 1034)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for (i, version) in enumerate(versions):
+    result.append((''.join(('py', version)), 'none', 'any'))
+    if i == 0:
+        result.append()","(1037, 1040)",0,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for (ap, p) in archive_paths:
+    with open(p, 'rb') as f:
+        data = f.read()
+    digest = '%s=%s' % self.get_hash(data)
+    size = os.path.getsize(p)
+    records.append((ap, digest, size))","(323, 328)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for (root, dirs, files) in os.walk(path):
+    if root == path:
+        for (i, dn) in enumerate(dirs):
+            dn = fsdecode(dn)
+            if dn.endswith('.dist-info'):
+                distinfo = os.path.join(root, dn)
+                del dirs[i]
+                break
+        assert distinfo, '.dist-info directory expected, not found'
+    for fn in files:
+        if fsdecode(fn).endswith(('.pyc', '.pyo')):
+            continue
+        p = os.path.join(root, fn)
+        rp = to_posix(os.path.relpath(p, path))
+        archive_paths.append((rp, p))","(396, 414)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for fn in files:
+    if fn not in ('RECORD', 'INSTALLER', 'SHARED', 'WHEEL'):
+        p = fsdecode(os.path.join(distinfo, fn))
+        ap = to_posix(os.path.join(info_dir, fn))
+        archive_paths.append()","(418, 422)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for (pyver, abi, arch) in self.tags:
+    wheel_metadata.append('Tag: %s-%s-%s' % (pyver, abi, arch))","(429, 430)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for s in ver[1].split('.'):
+    result.append(int(s) if s.isdigit() else 0)","(960, 961)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for arch in arches:
+    result.append((''.join((IMP_PREFIX, versions[0])), abi, arch))
+    if abi != 'none' and sys.platform.startswith('linux'):
+        arch = arch.replace('linux_', '')
+        parts = _get_glibc_version()
+        if len(parts) == 2:
+            if parts >= (2, 5):
+                result.append((''.join((IMP_PREFIX, versions[0])), abi, 'manylinux1_%s' % arch))
+            if parts >= (2, 12):
+                result.append((''.join((IMP_PREFIX, versions[0])), abi, 'manylinux2010_%s' % arch))
+            if parts >= (2, 17):
+                result.append((''.join((IMP_PREFIX, versions[0])), abi, 'manylinux2014_%s' % arch))
+            result.append((''.join((IMP_PREFIX, versions[0])), abi, 'manylinux_%s_%s_%s' % (parts[0], parts[1], arch)))","(1010, 1028)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for fn in files:
+    if fsdecode(fn).endswith(('.pyc', '.pyo')):
+        continue
+    p = os.path.join(root, fn)
+    rp = to_posix(os.path.relpath(p, path))
+    archive_paths.append((rp, p))","(408, 414)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for (root, dirs, files) in os.walk(path):
+    for fn in files:
+        p = fsdecode(os.path.join(root, fn))
+        rp = os.path.relpath(p, path)
+        ap = to_posix(os.path.join(data_dir, key, rp))
+        archive_paths.append((ap, p))
+        if key == 'scripts' and (not p.endswith('.exe')):
+            with open(p, 'rb') as f:
+                data = f.read()
+            data = self.process_shebang(data)
+            with open(p, 'wb') as f:
+                f.write(data)","(379, 390)",1,F2L.5
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/wheel.py,"for (name, relpath) in extensions.items():
+    dest = os.path.join(cache_base, convert_path(relpath))
+    if not os.path.exists(dest):
+        extract = True
+    else:
+        file_time = os.stat(dest).st_mtime
+        file_time = datetime.datetime.fromtimestamp(file_time)
+        info = zf.getinfo(relpath)
+        wheel_time = datetime.datetime(*info.date_time)
+        extract = wheel_time > file_time
+    if extract:
+        zf.extract(relpath, cache_base)
+    result.append((name, dest))","(736, 748)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/_backport/tarfile.py,"for (offset, size) in blockinfo:
+    if offset > lastpos:
+        self.map.append()
+    self.map.append((True, offset, offset + size, realpos))
+    realpos += size
+    lastpos = offset + size","(731, 736)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/_backport/tarfile.py,"for match in re.finditer(b'\\d+ GNU.sparse.numbytes=(\\d+)\\n', buf):
+    numbytes.append(int(match.group(1)))","(1496, 1497)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/_backport/sysconfig.py,"for name in args:
+    vals.append(_CONFIG_VARS.get(name))","(589, 590)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/version.py,"for p in get_parts(s):
+    if p.startswith('*'):
+        if p < '*final':
+            while result and result[-1] == '*final-':
+                result.pop()
+        while result and result[-1] == '00000000':
+            result.pop()
+    result.append(p)","(597, 604)",0,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/metadata.py,"for attr in ('Name', 'Version'):
+    if attr not in self:
+        missing.append()","(514, 516)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/metadata.py,"for attr in ('Home-page', 'Author'):
+    if attr not in self:
+        missing.append()","(522, 524)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/distlib/metadata.py,"for field in fields:
+    value = self.get(field, None)
+    if value is not None and (not controller(value)):
+        warnings.append()","(543, 546)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/idna/codec.py,"for label in labels:
+    result.append(alabel(label))
+    if size:
+        size += 1
+    size += len(label)","(57, 61)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/idna/codec.py,"for label in labels:
+    result.append(ulabel(label))
+    if size:
+        size += 1
+    size += len(label)","(91, 95)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/idna/intranges.py,"for i in range(len(sorted_list)):
+    if i + 1 < len(sorted_list):
+        if sorted_list[i] == sorted_list[i + 1] - 1:
+            continue
+    current_range = sorted_list[last_write + 1:i + 1]
+    ranges.append(_encode_range(current_range[0], current_range[-1] + 1))
+    last_write = i","(27, 33)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/urllib3/fields.py,"for (name, value) in iterable:
+    if value is not None:
+        parts.append()","(228, 230)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/urllib3/fields.py,"for sort_key in sort_keys:
+    if self.headers.get(sort_key, False):
+        lines.append()","(241, 243)",1,F2L.2
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/urllib3/_collections.py,"for line in message.headers:
+    if line.startswith(obs_fold_continued_leaders):
+        if not headers:
+            raise InvalidHeader('Header continuation with no previous header: %s' % line)
+        else:
+            (key, value) = headers[-1]
+            headers[-1] = (key, value + ' ' + line.strip())
+            continue
+    (key, value) = line.split(':', 1)
+    headers.append((key, value.strip()))","(324, 339)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/urllib3/packages/ssl_match_hostname/_implementation.py,"for frag in remainder:
+    pats.append(re.escape(frag))","(76, 77)",1,F2L.1
+./jasmin.git/jamsin_env/lib64/python3.10/site-packages/pip/_vendor/pyparsing.py,"for fn in fns:
+    self.parseAction.append(conditionAsParseAction(fn, message=kwargs.get('message'), fatal=kwargs.get('fatal', False)))","(1599, 1601)",0,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    connectors.append({'id': c['id'], 'config': c['config'], 'service_status': c['service'].running})","(147, 151)",1,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    CIDs.append(c['id'])","(186, 187)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    new_data.append(user)","(17, 26)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_hex_content'] = True
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(72, 84)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(102, 113)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/protocol.py,"for availableCmd in completetions:
+    if availableCmd.find(prefix) == 0:
+        foundCommands.append()","(182, 185)",1,F2L.2
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for user in users:
+    row = []
+    row.append('#%s' % user.uid)
+    row.append(user.getCnxStatus().smpps['bound_connections_count']['bind_receiver'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transmitter'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transceiver'])
+    row.append(formatDateTime(user.getCnxStatus().smpps['last_activity_at']))
+    row.append(user.getCnxStatus().httpapi['connects_count'])
+    row.append(formatDateTime(user.getCnxStatus().httpapi['last_activity_at']))
+    table.append(row)","(71, 81)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for connector in connectors:
+    row = []
+    row.append('#%s' % connector['id'])
+    row.append(formatDateTime(sc.get(connector['id']).get('connected_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('bound_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('disconnected_at')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('submit_sm_request_count'), sc.get(connector['id']).get('submit_sm_count')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('deliver_sm_count'), sc.get(connector['id']).get('data_sm_count')))
+    row.append(sc.get(connector['id']).get('throttling_error_count'))
+    row.append(sc.get(connector['id']).get('other_submit_error_count'))
+    table.append(row)","(116, 131)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/options.py,"for opt in option_list:
+    options_defined.append(pyparsing.Literal(opt.get_opt_string()))","(74, 75)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_smppccm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(28, 32)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_mtinterceptorm.py,"for item in results[:]:
+    filters.append('%sInterceptor' % item)","(179, 180)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_groupm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(13, 17)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_mxrouterm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(80, 84)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_mxrouterm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(96, 100)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_userm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(28, 32)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_userm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(45, 49)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_mxinterceptorm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(60, 64)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_mxinterceptorm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(77, 81)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_mointerceptorm.py,"for item in results[:]:
+    filters.append('%sInterceptor' % item)","(181, 182)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_morouterm.py,"for item in results[:]:
+    filters.append('%sRoute_http' % item)
+    filters.append('%sRoute_smpps' % item)","(224, 226)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_filtersm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(16, 20)",1,F2L.1
+./jasmin.git/tests/protocols/cli/test_httpccm.py,"for extraCommand in extraCommands:
+    commands.append(extraCommand)
+    if extraCommand['command'] in ['ok', 'ko']:
+        sessionTerminated = True","(13, 17)",1,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    connectors.append({'id': c['id'], 'config': c['config'], 'service_status': c['service'].running})","(122, 123)",1,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    CIDs.append(c['id'])","(147, 148)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_hex_content'] = True
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(48, 52)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(65, 68)",1,F2L.1
+./jasmin.git/jasmin/protocols/smpp/pb.py,"for bound_connection in self.smpps.bound_connections:
+    systemdids.append(bound_connection)","(50, 51)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for user in users:
+    row = []
+    row.append('#%s' % user.uid)
+    row.append(user.getCnxStatus().smpps['bound_connections_count']['bind_receiver'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transmitter'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transceiver'])
+    row.append(formatDateTime(user.getCnxStatus().smpps['last_activity_at']))
+    row.append(user.getCnxStatus().httpapi['connects_count'])
+    row.append(formatDateTime(user.getCnxStatus().httpapi['last_activity_at']))
+    table.append(row)","(57, 64)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for connector in connectors:
+    row = []
+    row.append('#%s' % connector['id'])
+    row.append(formatDateTime(sc.get(connector['id']).get('connected_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('bound_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('disconnected_at')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('submit_sm_request_count'), sc.get(connector['id']).get('submit_sm_count')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('deliver_sm_count'), sc.get(connector['id']).get('data_sm_count')))
+    row.append(sc.get(connector['id']).get('throttling_error_count'))
+    row.append(sc.get(connector['id']).get('other_submit_error_count'))
+    table.append(row)","(90, 100)",1,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    connectors.append({'id': c['id'], 'config': c['config'], 'service_status': c['service'].running})","(122, 123)",1,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    CIDs.append(c['id'])","(147, 148)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_hex_content'] = True
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(48, 52)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(65, 68)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_hex_content'] = True
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(48, 52)",1,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(65, 68)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for user in users:
+    row = []
+    row.append('#%s' % user.uid)
+    row.append(user.getCnxStatus().smpps['bound_connections_count']['bind_receiver'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transmitter'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transceiver'])
+    row.append(formatDateTime(user.getCnxStatus().smpps['last_activity_at']))
+    row.append(user.getCnxStatus().httpapi['connects_count'])
+    row.append(formatDateTime(user.getCnxStatus().httpapi['last_activity_at']))
+    table.append(row)","(57, 64)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for connector in connectors:
+    row = []
+    row.append('#%s' % connector['id'])
+    row.append(formatDateTime(sc.get(connector['id']).get('connected_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('bound_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('disconnected_at')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('submit_sm_request_count'), sc.get(connector['id']).get('submit_sm_count')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('deliver_sm_count'), sc.get(connector['id']).get('data_sm_count')))
+    row.append(sc.get(connector['id']).get('throttling_error_count'))
+    row.append(sc.get(connector['id']).get('other_submit_error_count'))
+    table.append(row)","(90, 100)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for user in users:
+    row = []
+    row.append('#%s' % user.uid)
+    row.append(user.getCnxStatus().smpps['bound_connections_count']['bind_receiver'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transmitter'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transceiver'])
+    row.append(formatDateTime(user.getCnxStatus().smpps['last_activity_at']))
+    row.append(user.getCnxStatus().httpapi['connects_count'])
+    row.append(formatDateTime(user.getCnxStatus().httpapi['last_activity_at']))
+    table.append(row)","(57, 64)",1,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for connector in connectors:
+    row = []
+    row.append('#%s' % connector['id'])
+    row.append(formatDateTime(sc.get(connector['id']).get('connected_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('bound_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('disconnected_at')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('submit_sm_request_count'), sc.get(connector['id']).get('submit_sm_count')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('deliver_sm_count'), sc.get(connector['id']).get('data_sm_count')))
+    row.append(sc.get(connector['id']).get('throttling_error_count'))
+    row.append(sc.get(connector['id']).get('other_submit_error_count'))
+    table.append(row)","(90, 100)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.stmts or []):
+    nodelist.append(('stmts[%d]' % i, child))","(299, 300)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.block_items or []):
+    nodelist.append(('block_items[%d]' % i, child))","(340, 341)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.decls or []):
+    nodelist.append(('decls[%d]' % i, child))","(440, 441)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.stmts or []):
+    nodelist.append(('stmts[%d]' % i, child))","(458, 459)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.enumerators or []):
+    nodelist.append(('enumerators[%d]' % i, child))","(561, 562)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.exprs or []):
+    nodelist.append(('exprs[%d]' % i, child))","(579, 580)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.ext or []):
+    nodelist.append(('ext[%d]' % i, child))","(597, 598)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.param_decls or []):
+    nodelist.append(('param_decls[%d]' % i, child))","(690, 691)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.exprs or []):
+    nodelist.append(('exprs[%d]' % i, child))","(785, 786)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.name or []):
+    nodelist.append(('name[%d]' % i, child))","(823, 824)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.params or []):
+    nodelist.append(('params[%d]' % i, child))","(843, 844)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.decls or []):
+    nodelist.append(('decls[%d]' % i, child))","(918, 919)",1,F2L.1
+pycparser.git/pycparser/c_ast.py,"for (i, child) in enumerate(self.decls or []):
+    nodelist.append(('decls[%d]' % i, child))","(1083, 1084)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for n in namelist:
+    if n and n[0]:
+        result.append((fdict[n[0]], n[1]))
+    else:
+        result.append(n)","(483, 487)",1,F2L.3
+pycparser.git/pycparser/ply/lex.py,"for state in stateinfo:
+    regex_list = []
+    for (fname, f) in linfo.funcsym[state]:
+        line = f.__code__.co_firstlineno
+        file = f.__code__.co_filename
+        regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)
+    for (name, r) in linfo.strsym[state]:
+        regex_list.append('(?P<%s>%s)' % (name, r))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)
+    regexs[state] = regex_list","(951, 968)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in lextab._lexstatere.items():
+    titem = []
+    txtitem = []
+    for (pat, func_name) in lre:
+        titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))
+    self.lexstatere[statename] = titem
+    self.lexstateretext[statename] = txtitem","(233, 240)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (fname, f) in linfo.funcsym[state]:
+    line = f.__code__.co_firstlineno
+    file = f.__code__.co_filename
+    regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)","(955, 960)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for (name, r) in linfo.strsym[state]:
+    regex_list.append('(?P<%s>%s)' % (name, r))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)","(963, 966)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in self.lexstatere.items():
+    titem = []
+    for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+        titem.append((retext, _funcs_to_names(func, renames)))
+    tabre[statename] = titem","(193, 197)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (pat, func_name) in lre:
+    titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))","(236, 237)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+    titem.append((retext, _funcs_to_names(func, renames)))","(195, 196)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for termname in self.Precedence:
+    if not (termname in self.Terminals or termname in self.UsedPrecedence):
+        unused.append()","(1791, 1793)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for p in parsetab._lr_productions:
+    self.lr_productions.append(MiniProduction(*p))","(1996, 1997)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for p in productions:
+    self.lr_productions.append(MiniProduction(*p))","(2023, 2024)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for (name, item) in self.pdict.items():
+    if not name.startswith('p_') or name == 'p_error':
+        continue
+    if isinstance(item, (types.FunctionType, types.MethodType)):
+        line = getattr(item, 'co_firstlineno', item.__code__.co_firstlineno)
+        module = inspect.getmodule(item)
+        p_functions.append()","(3133, 3139)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for s in p.prod:
+    if s not in self.Prodnames and s not in self.Terminals and (s != 'error'):
+        result.append()","(1746, 1748)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for j in J:
+    for x in j.lr_after:
+        if getattr(x, 'lr0_added', 0) == self._add_count:
+            continue
+        J.append(x.lr_next)
+        x.lr0_added = self._add_count
+        didadd = True","(2149, 2156)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for x in asyms:
+    g = self.lr0_goto(I, x)
+    if not g or id(g) in self.lr0_cidhash:
+        continue
+    self.lr0_cidhash[id(g)] = len(C)
+    C.append(g)","(2221, 2226)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for i in includes:
+    if i not in includedict:
+        includedict[i] = []
+    includedict[i].append((state, N))","(2435, 2438)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for p in self.lr_productions:
+    if p.func:
+        outp.append((p.str, p.name, p.len, p.func, os.path.basename(p.file), p.line))
+    else:
+        outp.append((str(p), p.name, p.len, None, None, None))","(2865, 2869)",1,F2L.3
+pycparser.git/pycparser/ply/yacc.py,"for f in self.pfuncs:
+    if f[3]:
+        parts.append()","(2983, 2985)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for (level, p) in enumerate(self.prec):
+    if not isinstance(p, (list, tuple)):
+        self.log.error('Bad precedence table')
+        self.error = True
+        return
+    if len(p) < 2:
+        self.log.error('Malformed precedence entry %s. Must be (assoc, term, ..., term)', p)
+        self.error = True
+        return
+    assoc = p[0]
+    if not isinstance(assoc, string_types):
+        self.log.error('precedence associativity must be a string')
+        self.error = True
+        return
+    for term in p[1:]:
+        if not isinstance(term, string_types):
+            self.log.error('precedence items must be strings')
+            self.error = True
+            return
+        preclist.append((term, assoc, level + 1))","(3107, 3127)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for x in j.lr_after:
+    if getattr(x, 'lr0_added', 0) == self._add_count:
+        continue
+    J.append(x.lr_next)
+    x.lr0_added = self._add_count
+    didadd = True","(2150, 2156)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_action.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(2756, 2763)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_goto.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(2796, 2803)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for term in p[1:]:
+    if not isinstance(term, string_types):
+        self.log.error('precedence items must be strings')
+        self.error = True
+        return
+    preclist.append((term, assoc, level + 1))","(3122, 3127)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for f in self._first(p.prod):
+    if f not in self.First[n]:
+        self.First[n].append()
+        some_change = True","(1861, 1864)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for f in fst:
+    if f != '<empty>' and f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True
+    if f == '<empty>':
+        hasempty = True","(1904, 1909)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for f in self.Follow[p.name]:
+    if f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True","(1912, 1915)",1,F2L.2
+pycparser.git/pycparser/c_generator.py,"for expr in n.exprs:
+    visited_subexprs.append(self._visit_expr(expr))","(174, 175)",1,F2L.1
+pycparser.git/pycparser/c_generator.py,"for expr in n.exprs:
+    visited_subexprs.append(self._visit_expr(expr))","(180, 181)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for n in namelist:
+    if n and n[0]:
+        result.append((fdict[n[0]], n[1]))
+    else:
+        result.append(n)","(308, 312)",1,F2L.3
+pycparser.git/pycparser/ply/lex.py,"for state in stateinfo:
+    regex_list = []
+    for (fname, f) in linfo.funcsym[state]:
+        line = f.__code__.co_firstlineno
+        file = f.__code__.co_filename
+        regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)
+    for (name, r) in linfo.strsym[state]:
+        regex_list.append('(?P<%s>%s)' % (name, r))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)
+    regexs[state] = regex_list","(662, 674)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in lextab._lexstatere.items():
+    titem = []
+    txtitem = []
+    for (pat, func_name) in lre:
+        titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))
+    self.lexstatere[statename] = titem
+    self.lexstateretext[statename] = txtitem","(151, 157)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (fname, f) in linfo.funcsym[state]:
+    line = f.__code__.co_firstlineno
+    file = f.__code__.co_filename
+    regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)","(664, 669)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for (name, r) in linfo.strsym[state]:
+    regex_list.append('(?P<%s>%s)' % (name, r))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)","(670, 673)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in self.lexstatere.items():
+    titem = []
+    for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+        titem.append((retext, _funcs_to_names(func, renames)))
+    tabre[statename] = titem","(119, 123)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (pat, func_name) in lre:
+    titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))","(154, 155)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+    titem.append((retext, _funcs_to_names(func, renames)))","(121, 122)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for termname in self.Precedence:
+    if not (termname in self.Terminals or termname in self.UsedPrecedence):
+        unused.append()","(1029, 1031)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for p in parsetab._lr_productions:
+    self.lr_productions.append(MiniProduction(*p))","(1151, 1152)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for p in productions:
+    self.lr_productions.append(MiniProduction(*p))","(1173, 1174)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for (name, item) in self.pdict.items():
+    if not name.startswith('p_') or name == 'p_error':
+        continue
+    if isinstance(item, (types.FunctionType, types.MethodType)):
+        line = getattr(item, 'co_firstlineno', item.__code__.co_firstlineno)
+        module = inspect.getmodule(item)
+        p_functions.append()","(1866, 1872)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for s in p.prod:
+    if s not in self.Prodnames and s not in self.Terminals and (s != 'error'):
+        result.append()","(1007, 1009)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for j in J:
+    for x in j.lr_after:
+        if getattr(x, 'lr0_added', 0) == self._add_count:
+            continue
+        J.append(x.lr_next)
+        x.lr0_added = self._add_count
+        didadd = True","(1250, 1256)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for x in asyms:
+    g = self.lr0_goto(I, x)
+    if not g or id(g) in self.lr0_cidhash:
+        continue
+    self.lr0_cidhash[id(g)] = len(C)
+    C.append(g)","(1301, 1306)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for i in includes:
+    if i not in includedict:
+        includedict[i] = []
+    includedict[i].append((state, N))","(1406, 1409)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for p in self.lr_productions:
+    if p.func:
+        outp.append((p.str, p.name, p.len, p.func, os.path.basename(p.file), p.line))
+    else:
+        outp.append((str(p), p.name, p.len, None, None, None))","(1664, 1668)",1,F2L.3
+pycparser.git/pycparser/ply/yacc.py,"for f in self.pfuncs:
+    if f[3]:
+        parts.append()","(1748, 1750)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for (level, p) in enumerate(self.prec):
+    if not isinstance(p, (list, tuple)):
+        self.log.error('Bad precedence table')
+        self.error = True
+        return
+    if len(p) < 2:
+        self.log.error('Malformed precedence entry %s. Must be (assoc, term, ..., term)', p)
+        self.error = True
+        return
+    assoc = p[0]
+    if not isinstance(assoc, string_types):
+        self.log.error('precedence associativity must be a string')
+        self.error = True
+        return
+    for term in p[1:]:
+        if not isinstance(term, string_types):
+            self.log.error('precedence items must be strings')
+            self.error = True
+            return
+        preclist.append((term, assoc, level + 1))","(1842, 1861)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for x in j.lr_after:
+    if getattr(x, 'lr0_added', 0) == self._add_count:
+        continue
+    J.append(x.lr_next)
+    x.lr0_added = self._add_count
+    didadd = True","(1251, 1256)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_action.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(1591, 1598)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_goto.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(1617, 1624)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for term in p[1:]:
+    if not isinstance(term, string_types):
+        self.log.error('precedence items must be strings')
+        self.error = True
+        return
+    preclist.append((term, assoc, level + 1))","(1856, 1861)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for f in self._first(p.prod):
+    if f not in self.First[n]:
+        self.First[n].append()
+        some_change = True","(1063, 1066)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for f in fst:
+    if f != '<empty>' and f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True
+    if f == '<empty>':
+        hasempty = True","(1088, 1093)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for f in self.Follow[p.name]:
+    if f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True","(1095, 1098)",1,F2L.2
+pycparser.git/pycparser/ply/lex.py,"for n in namelist:
+    if n and n[0]:
+        result.append((fdict[n[0]], n[1]))
+    else:
+        result.append(n)","(308, 312)",1,F2L.3
+pycparser.git/pycparser/ply/lex.py,"for state in stateinfo:
+    regex_list = []
+    for (fname, f) in linfo.funcsym[state]:
+        line = f.__code__.co_firstlineno
+        file = f.__code__.co_filename
+        regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)
+    for (name, r) in linfo.strsym[state]:
+        regex_list.append('(?P<%s>%s)' % (name, r))
+        if debug:
+            debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)
+    regexs[state] = regex_list","(662, 674)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in lextab._lexstatere.items():
+    titem = []
+    txtitem = []
+    for (pat, func_name) in lre:
+        titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))
+    self.lexstatere[statename] = titem
+    self.lexstateretext[statename] = txtitem","(151, 157)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (fname, f) in linfo.funcsym[state]:
+    line = f.__code__.co_firstlineno
+    file = f.__code__.co_filename
+    regex_list.append('(?P<%s>%s)' % (fname, _get_regex(f)))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", fname, _get_regex(f), state)","(664, 669)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for (name, r) in linfo.strsym[state]:
+    regex_list.append('(?P<%s>%s)' % (name, r))
+    if debug:
+        debuglog.info(""lex: Adding rule %s -> '%s' (state '%s')"", name, r, state)","(670, 673)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for (statename, lre) in self.lexstatere.items():
+    titem = []
+    for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+        titem.append((retext, _funcs_to_names(func, renames)))
+    tabre[statename] = titem","(119, 123)",1,F2L.5
+pycparser.git/pycparser/ply/lex.py,"for (pat, func_name) in lre:
+    titem.append((re.compile(pat, lextab._lexreflags), _names_to_funcs(func_name, fdict)))","(154, 155)",1,F2L.1
+pycparser.git/pycparser/ply/lex.py,"for ((pat, func), retext, renames) in zip(lre, self.lexstateretext[statename], self.lexstaterenames[statename]):
+    titem.append((retext, _funcs_to_names(func, renames)))","(121, 122)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for termname in self.Precedence:
+    if not (termname in self.Terminals or termname in self.UsedPrecedence):
+        unused.append()","(1029, 1031)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for p in parsetab._lr_productions:
+    self.lr_productions.append(MiniProduction(*p))","(1151, 1152)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for p in productions:
+    self.lr_productions.append(MiniProduction(*p))","(1173, 1174)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for (name, item) in self.pdict.items():
+    if not name.startswith('p_') or name == 'p_error':
+        continue
+    if isinstance(item, (types.FunctionType, types.MethodType)):
+        line = getattr(item, 'co_firstlineno', item.__code__.co_firstlineno)
+        module = inspect.getmodule(item)
+        p_functions.append()","(1866, 1872)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for s in p.prod:
+    if s not in self.Prodnames and s not in self.Terminals and (s != 'error'):
+        result.append()","(1007, 1009)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for j in J:
+    for x in j.lr_after:
+        if getattr(x, 'lr0_added', 0) == self._add_count:
+            continue
+        J.append(x.lr_next)
+        x.lr0_added = self._add_count
+        didadd = True","(1250, 1256)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for x in asyms:
+    g = self.lr0_goto(I, x)
+    if not g or id(g) in self.lr0_cidhash:
+        continue
+    self.lr0_cidhash[id(g)] = len(C)
+    C.append(g)","(1301, 1306)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for i in includes:
+    if i not in includedict:
+        includedict[i] = []
+    includedict[i].append((state, N))","(1406, 1409)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for p in self.lr_productions:
+    if p.func:
+        outp.append((p.str, p.name, p.len, p.func, os.path.basename(p.file), p.line))
+    else:
+        outp.append((str(p), p.name, p.len, None, None, None))","(1664, 1668)",1,F2L.3
+pycparser.git/pycparser/ply/yacc.py,"for f in self.pfuncs:
+    if f[3]:
+        parts.append()","(1748, 1750)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for (level, p) in enumerate(self.prec):
+    if not isinstance(p, (list, tuple)):
+        self.log.error('Bad precedence table')
+        self.error = True
+        return
+    if len(p) < 2:
+        self.log.error('Malformed precedence entry %s. Must be (assoc, term, ..., term)', p)
+        self.error = True
+        return
+    assoc = p[0]
+    if not isinstance(assoc, string_types):
+        self.log.error('precedence associativity must be a string')
+        self.error = True
+        return
+    for term in p[1:]:
+        if not isinstance(term, string_types):
+            self.log.error('precedence items must be strings')
+            self.error = True
+            return
+        preclist.append((term, assoc, level + 1))","(1842, 1861)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for x in j.lr_after:
+    if getattr(x, 'lr0_added', 0) == self._add_count:
+        continue
+    J.append(x.lr_next)
+    x.lr0_added = self._add_count
+    didadd = True","(1251, 1256)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_action.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(1591, 1598)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for (s, nd) in self.lr_goto.items():
+    for (name, v) in nd.items():
+        i = items.get(name)
+        if not i:
+            i = ([], [])
+            items[name] = i
+        i[0].append(s)
+        i[1].append(v)","(1617, 1624)",1,F2L.5
+pycparser.git/pycparser/ply/yacc.py,"for term in p[1:]:
+    if not isinstance(term, string_types):
+        self.log.error('precedence items must be strings')
+        self.error = True
+        return
+    preclist.append((term, assoc, level + 1))","(1856, 1861)",1,F2L.1
+pycparser.git/pycparser/ply/yacc.py,"for f in self._first(p.prod):
+    if f not in self.First[n]:
+        self.First[n].append()
+        some_change = True","(1063, 1066)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for f in fst:
+    if f != '<empty>' and f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True
+    if f == '<empty>':
+        hasempty = True","(1088, 1093)",1,F2L.2
+pycparser.git/pycparser/ply/yacc.py,"for f in self.Follow[p.name]:
+    if f not in self.Follow[B]:
+        self.Follow[B].append()
+        didadd = True","(1095, 1098)",1,F2L.2
+pre-commit-hooks.git/pre_commit_hooks/string_fixer.py,"for line in src.splitlines(True):
+    offsets.append(offsets[-1] + len(line))","(34, 35)",0,F2L.1
+pre-commit-hooks.git/pre_commit_hooks/requirements_txt_fixer.py,"for line in before:
+    if not len(requirements) or requirements[-1].is_complete():
+        requirements.append()
+    requirement = requirements[-1]
+    if len(requirements) == 1 and line.strip() == b'':
+        if len(requirement.comments) and requirement.comments[0].startswith(b'#'):
+            requirement.value = b'\n'
+        else:
+            requirement.comments.append(line)
+    elif line.lstrip().startswith(b'#') or line.strip() == b'':
+        requirement.comments.append(line)
+    else:
+        requirement.append_value(line)","(83, 105)",0,F2L.2
+pre-commit-hooks.git/pre_commit_hooks/requirements_txt_fixer.py,"for requirement in sorted(requirements):
+    after.extend(requirement.comments)
+    assert requirement.value, requirement.value
+    after.append(requirement.value)","(120, 123)",1,F2L.1
+pre-commit-hooks.git/pre_commit_hooks/sort_simple_yaml.py,"for block in sorted(parse_blocks(lines), key=first_key):
+    if new_lines:
+        new_lines.append()
+    new_lines.extend(block)","(43, 46)",0,F2L.2
+pre-commit-hooks.git/pre_commit_hooks/detect_aws_credentials.py,"for key in keys:
+    if key in text_body:
+        key_hidden = key.decode()[:4].ljust(28, '*')
+        bad_files.append()","(88, 93)",1,F2L.2
+pre-commit-hooks.git/pre_commit_hooks/string_fixer.py,"for line in src.splitlines(True):
+    offsets.append(offsets[-1] + len(line))","(29, 30)",0,F2L.1
+pre-commit-hooks.git/pre_commit_hooks/requirements_txt_fixer.py,"for line in before:
+    if not len(requirements) or requirements[-1].is_complete():
+        requirements.append()
+    requirement = requirements[-1]
+    if len(requirements) == 1 and line.strip() == b'':
+        if len(requirement.comments) and requirement.comments[0].startswith(b'#'):
+            requirement.value = b'\n'
+        else:
+            requirement.comments.append(line)
+    elif line.lstrip().startswith(b'#') or line.strip() == b'':
+        requirement.comments.append(line)
+    else:
+        requirement.append_value(line)","(64, 76)",0,F2L.2
+pre-commit-hooks.git/pre_commit_hooks/requirements_txt_fixer.py,"for requirement in sorted(requirements):
+    after.extend(requirement.comments)
+    assert requirement.value, requirement.value
+    after.append(requirement.value)","(82, 85)",1,F2L.1
+pre-commit-hooks.git/pre_commit_hooks/sort_simple_yaml.py,"for block in sorted(parse_blocks(lines), key=first_key):
+    if new_lines:
+        new_lines.append()
+    new_lines.extend(block)","(20, 23)",0,F2L.2
+pre-commit-hooks.git/pre_commit_hooks/detect_aws_credentials.py,"for key in keys:
+    if key in text_body:
+        key_hidden = key.decode()[:4].ljust(28, '*')
+        bad_files.append()","(65, 68)",1,F2L.2
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    connectors.append({'id': c['id'], 'config': c['config'], 'service_status': c['service'].running})","(122, 123)",0,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    CIDs.append(c['id'])","(147, 148)",0,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_hex_content'] = True
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(48, 52)",0,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for connector in connectors:
+    row = []
+    row.append('#%s' % connector['id'])
+    row.append(formatDateTime(sc.get(connector['id']).get('connected_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('bound_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('disconnected_at')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('submit_sm_request_count'), sc.get(connector['id']).get('submit_sm_count')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('deliver_sm_count'), sc.get(connector['id']).get('data_sm_count')))
+    row.append(sc.get(connector['id']).get('throttling_error_count'))
+    row.append(sc.get(connector['id']).get('other_submit_error_count'))
+    table.append(row)","(90, 100)",0,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for connector in connectors:
+    row = []
+    row.append('#%s' % connector['id'])
+    row.append(formatDateTime(sc.get(connector['id']).get('connected_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('bound_at')))
+    row.append(formatDateTime(sc.get(connector['id']).get('disconnected_at')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('submit_sm_request_count'), sc.get(connector['id']).get('submit_sm_count')))
+    row.append('%s/%s' % (sc.get(connector['id']).get('deliver_sm_count'), sc.get(connector['id']).get('data_sm_count')))
+    row.append(sc.get(connector['id']).get('throttling_error_count'))
+    row.append(sc.get(connector['id']).get('other_submit_error_count'))
+    table.append(row)","(90, 100)",0,F2L.1
+./jasmin.git/jasmin/managers/clients.py,"for c in self.connectors:
+    connectors.append({'id': c['id'], 'config': c['config'], 'service_status': c['service'].running})","(122, 123)",0,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_hex_content'] = True
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(48, 52)",0,F2L.1
+./jasmin.git/jasmin/tools/migrations/migration.py,"for old_user in data:
+    user = User(uid=old_user.uid, group=Group(old_user.group.gid), username=old_user.username, password=old_user.password, password_crypted=True, mt_credential=old_user.mt_credential, smpps_credential=old_user.smpps_credential)
+    user.mt_credential.authorizations['set_schedule_delivery_time'] = True
+    new_data.append(user)","(65, 68)",0,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for user in users:
+    row = []
+    row.append('#%s' % user.uid)
+    row.append(user.getCnxStatus().smpps['bound_connections_count']['bind_receiver'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transmitter'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transceiver'])
+    row.append(formatDateTime(user.getCnxStatus().smpps['last_activity_at']))
+    row.append(user.getCnxStatus().httpapi['connects_count'])
+    row.append(formatDateTime(user.getCnxStatus().httpapi['last_activity_at']))
+    table.append(row)","(57, 64)",0,F2L.1
+./jasmin.git/jasmin/protocols/cli/statsm.py,"for user in users:
+    row = []
+    row.append('#%s' % user.uid)
+    row.append(user.getCnxStatus().smpps['bound_connections_count']['bind_receiver'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transmitter'] + user.getCnxStatus().smpps['bound_connections_count']['bind_transceiver'])
+    row.append(formatDateTime(user.getCnxStatus().smpps['last_activity_at']))
+    row.append(user.getCnxStatus().httpapi['connects_count'])
+    row.append(formatDateTime(user.getCnxStatus().httpapi['last_activity_at']))
+    table.append(row)","(57, 64)",0,F2L.1
