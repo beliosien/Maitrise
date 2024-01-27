@@ -1,7 +1,19 @@
 from abc import ABC, abstractmethod
 
 
-class Animal(ABC):
+class A(object):
+
+    def __str__(self):
+        return "i am A object"
+
+
+
+a = A()
+
+print(a)
+
+
+"""class Animal(ABC):
     def __init__(self, name: str, n_legs: int) -> None:
         self.name = name
         self.n_legs = n_legs
@@ -22,3 +34,4 @@ class Dog(Animal):
 
 d = Dog("dingo", 4)
 d.run()
+"""
